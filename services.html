@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Fiberglass Technical Group - Reactive Metal Fabrication Experts</title>
+    <meta name="description" content="Comprehensive reactive metal fabrication services including titanium, zirconium, and tantalum design, consultation, and inspection for chemical processing industries.">
+    <meta name="keywords" content="reactive metal services, titanium fabrication, zirconium inspection, tantalum consultation, chemical processing equipment, lithium processing, Albemarle services">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-charcoal: #2C2C2C;
+            --light-charcoal: #4A4A4A;
+            --warm-white: #FAFAFA;
+            --accent-blue: #1E3A8A;
+            --success-green: #059669;
+            --reactive-titanium: #C0C0C0;
+            --reactive-zirconium: #A8B5B8;
+            --reactive-tantalum: #73716E;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-charcoal);
+            background: var(--warm-white);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+        
+        /* Header - Same as homepage */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(44, 44, 44, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .logo-symbol {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-gold), #F4E04D);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.1;
+        }
+        
+        .logo-sub {
+            font-size: 0.75rem;
+            color: var(--primary-gold);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+        
+        .nav-menu a:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .nav-menu a.active {
+            background: var(--primary-gold);
+            color: var(--dark-charcoal);
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--dark-charcoal), var(--light-charcoal));
+            color: white;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--primary-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Services Overview */
+        .services-overview {
+            padding: 6rem 0;
+            background: var(--warm-white);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .service-detailed {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .service-detailed:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-header {
+            padding: 3rem 3rem 2rem;
+            background: linear-gradient(135deg, var(--dark-charcoal), var(--light-charcoal));
+            color: white;
+        }
+        
+        .service-icon-large {
+            width: 100px;
+            height: 100px;
+            background: var(--primary-gold);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            color: var(--dark-charcoal);
+            font-size: 3rem;
+        }
+        
+        .service-header h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .service-subtitle {
+            color: var(--primary-gold);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .service-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .service-content {
+            padding: 3rem;
+        }
+        
+        .service-features {
+            margin-bottom: 2rem;
+        }
+        
+        .service-features h4 {
+            color: var(--dark-charcoal);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .features-list {
+            list-style: none;
+        }
+        
+        .features-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .features-list li:hover {
+            background: rgba(212, 175, 55, 0.05);
+            padding-left: 1rem;
+        }
+        
+        .features-list li::before {
+            content: '✓';
+            color: var(--success-green);
+            font-weight: bold;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .service-applications {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+        
+        .service-applications h4 {
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .applications-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.8rem;
+        }
+        
+        .applications-list li {
+            padding: 0.5rem 0;
+            color: var(--light-charcoal);
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .applications-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--primary-gold);
+            font-size: 0.8rem;
+        }
+        
+        /* Process Section */
+        .process-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f8f9fa, var(--warm-white));
+        }
+        
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .process-step {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-gold), #F4E04D);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--dark-charcoal);
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .process-step h4 {
+            color: var(--dark-charcoal);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .process-step p {
+            color: var(--light-charcoal);
+            line-height: 1.6;
+        }
+        
+        /* Technologies Section */
+        .technologies {
+            padding: 6rem 0;
+            background: var(--dark-charcoal);
+            color: white;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .tech-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .tech-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-gold);
+            transform: translateY(-5px);
+        }
+        
+        .tech-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-gold);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--dark-charcoal);
+            font-size: 2rem;
+        }
+        
+        .tech-card h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .tech-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--accent-blue), var(--primary-gold));
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            padding: 18px 36px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--dark-charcoal);
+        }
+        
+        .btn-white:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Footer - Same as homepage */
+        .footer {
+            background: var(--dark-charcoal);
+            color: white;
+            padding: 3rem 0 1rem;
+            text-align: center;
+            border-top: 3px solid var(--primary-gold);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+        
+        .footer-section a:hover {
+            color: var(--primary-gold);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding-top: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo-container">
+                <div class="logo-symbol">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M12 20h16M20 12v16" stroke="currentColor" stroke-width="3"/>
+                        <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.3"/>
+                        <circle cx="16" cy="16" r="2" fill="currentColor"/>
+                        <circle cx="24" cy="24" r="2" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <div class="logo-main">FIBERGLASS TECHNICAL GROUP</div>
+                    <div class="logo-sub">Reactive Metal Specialists</div>
+                </div>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Comprehensive reactive metal fabrication and inspection services for the most demanding chemical processing applications</p>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="services-grid">
+                <!-- Reactive Metal Design -->
+                <div class="service-detailed fade-in">
+                    <div class="service-header">
+                        <div class="service-icon-large">⚛️</div>
+                        <h3>Reactive Metal Design</h3>
+                        <div class="service-subtitle">Ti • Zr • Ta Engineering Excellence</div>
+                        <p class="service-description">
+                            Advanced engineering design and material selection for titanium, zirconium, and tantalum fabrications. 
+                            Specialized solutions for lithium processing and extreme chemical environments.
+                        </p>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-features">
+                            <h4>Design Capabilities</h4>
+                            <ul class="features-list">
+                                <li>Material compatibility analysis and selection</li>
+                                <li>Corrosion resistance optimization</li>
+                                <li>ASME code compliance design</li>
+                                <li>Thermal stress calculations</li>
+                                <li>Process optimization consulting</li>
+                                <li>CAD modeling and simulation</li>
+                                <li>Performance validation testing</li>
+                            </ul>
+                        </div>
+                        <div class="service-applications">
+                            <h4>Primary Applications</h4>
+                            <ul class="applications-list">
+                                <li>Lithium processing equipment</li>
+                                <li>Chemical reactor vessels</li>
+                                <li>Heat exchangers</li>
+                                <li>Pressure vessels</li>
+                                <li>Storage tanks</li>
+                                <li>Piping systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Precision Inspection -->
+                <div class="service-detailed fade-in">
+                    <div class="service-header">
+                        <div class="service-icon-large">🔍</div>
+                        <h3>Precision Inspection</h3>
+                        <div class="service-subtitle">Quality Assurance Excellence</div>
+                        <p class="service-description">
+                            Comprehensive inspection services ensuring the highest quality standards for reactive metal 
+                            fabrications and chemical processing equipment.
+                        </p>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-features">
+                            <h4>Inspection Services</h4>
+                            <ul class="features-list">
+                                <li>Non-destructive testing (NDT)</li>
+                                <li>Material certification review</li>
+                                <li>Weld quality assessment</li>
+                                <li>Dimensional inspection</li>
+                                <li>Performance validation</li>
+                                <li>Compliance verification</li>
+                                <li>Documentation and reporting</li>
+                            </ul>
+                        </div>
+                        <div class="service-applications">
+                            <h4>Inspection Types</h4>
+                            <ul class="applications-list">
+                                <li>In-service inspections</li>
+                                <li>Pre-shipment inspections</li>
+                                <li>Installation inspections</li>
+                                <li>Periodic maintenance inspections</li>
+                                <li>Emergency assessments</li>
+                                <li>Failure analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expert Consultation -->
+                <div class="service-detailed fade-in">
+                    <div class="service-header">
+                        <div class="service-icon-large">🔬</div>
+                        <h3>Expert Consultation</h3>
+                        <div class="service-subtitle">Technical Advisory Services</div>
+                        <p class="service-description">
+                            Specialized consultation for material selection, process optimization, and failure analysis 
+                            in chemical processing applications.
+                        </p>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-features">
+                            <h4>Consultation Areas</h4>
+                            <ul class="features-list">
+                                <li>Material selection guidance</li>
+                                <li>Chemical compatibility assessment</li>
+                                <li>Failure analysis and prevention</li>
+                                <li>Process improvement strategies</li>
+                                <li>Training and knowledge transfer</li>
+                                <li>Risk assessment and mitigation</li>
+                                <li>Technology evaluation</li>
+                            </ul>
+                        </div>
+                        <div class="service-applications">
+                            <h4>Consultation Focus</h4>
+                            <ul class="applications-list">
+                                <li>Lithium processing optimization</li>
+                                <li>Chemical compatibility</li>
+                                <li>Material performance</li>
+                                <li>Cost reduction strategies</li>
+                                <li>Safety improvements</li>
+                                <li>Technology upgrades</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header fade-in" style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; color: #2C2C2C; margin-bottom: 1rem;">Our Process</h2>
+                <p style="font-size: 1.2rem; color: #4A4A4A;">Systematic approach ensuring optimal results for every project</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step fade-in">
+                    <div class="step-number">1</div>
+                    <h4>Initial Assessment</h4>
+                    <p>Comprehensive evaluation of project requirements, chemical environment, and performance specifications.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">2</div>
+                    <h4>Material Selection</h4>
+                    <p>Expert selection of optimal reactive metals based on chemical compatibility and performance requirements.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">3</div>
+                    <h4>Design Development</h4>
+                    <p>Advanced engineering design with CAD modeling, stress analysis, and optimization for manufacturability.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">4</div>
+                    <h4>Quality Assurance</h4>
+                    <p>Rigorous inspection and testing protocols ensuring compliance with industry standards and specifications.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">5</div>
+                    <h4>Documentation</h4>
+                    <p>Complete technical documentation including certifications, test reports, and maintenance guidelines.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">6</div>
+                    <h4>Ongoing Support</h4>
+                    <p>Continuous technical support, maintenance consultation, and performance monitoring.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="technologies">
+        <div class="container">
+            <div class="section-header fade-in" style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; color: white; margin-bottom: 1rem;">Technologies & Standards</h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8);">Industry-leading technologies and compliance with international standards</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-card fade-in">
+                    <div class="tech-icon">📐</div>
+                    <h4>CAD & Modeling</h4>
+                    <p>Advanced 3D modeling, finite element analysis, and computational fluid dynamics for optimal design solutions.</p>
+                </div>
+                
+                <div class="tech-card fade-in">
+                    <div class="tech-icon">🔬</div>
+                    <h4>Material Testing</h4>
+                    <p>Comprehensive material testing including chemical compatibility, mechanical properties, and corrosion resistance.</p>
+                </div>
+                
+                <div class="tech-card fade-in">
+                    <div class="tech-icon">⚡</div>
+                    <h4>NDT Methods</h4>
+                    <p>Non-destructive testing using ultrasonic, radiographic, and penetrant testing methods for quality assurance.</p>
+                </div>
+                
+                <div class="tech-card fade-in">
+                    <div class="tech-icon">📋</div>
+                    <h4>ASME Compliance</h4>
+                    <p>Full compliance with ASME codes and standards for pressure vessels, piping, and chemical processing equipment.</p>
+                </div>
+                
+                <div class="tech-card fade-in">
+                    <div class="tech-icon">🌐</div>
+                    <h4>Global Standards</h4>
+                    <p>Adherence to international standards including ISO, API, and ASTM for worldwide project compatibility.</p>
+                </div>
+                
+                <div class="tech-card fade-in">
+                    <div class="tech-icon">💻</div>
+                    <h4>Digital Documentation</h4>
+                    <p>Complete digital documentation systems for traceability, compliance reporting, and maintenance tracking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Contact our reactive metal specialists today to discuss your fabrication and inspection needs.</p>
+                <a href="contact.html" class="btn btn-white">Get Expert Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Fiberglass Technical Group</h4>
+                    <p>Leading specialists in reactive metal fabrication design, consultation, and inspection services for the chemical processing industry.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Core Services</h4>
+                    <p><a href="#services">Reactive Metal Design</a></p>
+                    <p><a href="#services">Precision Inspection</a></p>
+                    <p><a href="#services">Expert Consultation</a></p>
+                    <p><a href="#services">Material Selection</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Specializations</h4>
+                    <p>Titanium Systems</p>
+                    <p>Zirconium Solutions</p>
+                    <p>Tantalum Applications</p>
+                    <p>Lithium Processing Equipment</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@fiberglasstechnicalgroup.com</p>
+                    <p>Worldwide Service Available</p>
+                    <p>24/7 Emergency Support</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fiberglass Technical Group. All rights reserved. | Expert Reactive Metal Fabrication Services</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 44, 44, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.background = 'rgba(44, 44, 44, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        console.log('🔧 FTG Services Page Loaded Successfully');
+    </script>
+</body>
+</html>
