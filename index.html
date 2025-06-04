@@ -3,840 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title Here</title>
-    <style>
-        /* Your existing CSS rules should be placed here */
-        .testimonial-card {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            position: relative;
-        }
-        
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 6rem;
-            color: var(--primary-gold);
-            font-family: 'Playfair Display', serif;
-            opacity: 0.3;
-        }
-        
-        .testimonial-text {
-            font-size: 1.3rem;
-            color: var(--dark-charcoal);
-            line-height: 1.7;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-        
-        .testimonial-author {
-            color: var(--primary-gold);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .testimonial-company {
-            color: var(--light-charcoal);
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, var(--dark-charcoal), var(--light-charcoal));
-            color: white;
-        }
-        
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-        
-        .contact-info h3 {
-            color: white;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        
-        .contact-item:hover {
-            background: rgba(212, 175, 55, 0.2);
-            transform: translateX(10px);
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-            color: var(--dark-charcoal);
-            font-size: 1.2rem;
-        }
-        
-        .contact-form {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 3rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: white;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid rgba(212, 175, 55, 0.3);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--primary-gold);
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-        
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--dark-charcoal);
-            color: white;
-            padding: 3rem 0 1rem;
-            text-align: center;
-            border-top: 3px solid var(--primary-gold);
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h4 {
-            color: var(--primary-gold);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            line-height: 1.6;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-section a:hover {
-            color: var(--primary-gold);
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            padding-top: 1rem;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes subtle-pulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
-        }
-        
-        @keyframes float-particle {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-            }
-            90% {
-                opacity: 0.6;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-            
-            .nav-menu {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--dark-charcoal);
-                padding: 1rem;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            }
-            
-            .nav-menu.active {
-                display: flex;
-            }
-            
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .hero-stats {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .partnership-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .metals-grid,
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .container {
-                padding: 0 1rem;
-            }
-        }
-        
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        </header>
-</body>
-</html>
-        
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="nav-container">
-            <a href="#home" class="logo-container">
-                <div class="logo-symbol">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- FTG Logo inspired by welding/metalwork -->
-                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
-                        <path d="M12 20h16M20 12v16" stroke="currentColor" stroke-width="3"/>
-                        <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.3"/>
-                        <circle cx="16" cy="16" r="2" fill="currentColor"/>
-                        <circle cx="24" cy="24" r="2" fill="currentColor"/>
-                    </svg>
-                </div>
-                <div class="logo-text">
-                    <div class="logo-main">FIBERGLASS TECHNICAL GROUP</div>
-                    <div class="logo-sub">Reactive Metal Specialists</div>
-                </div>
-            </a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <button class="mobile-menu-toggle">☰</button>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="floating-particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
-        
-        <div class="hero-content">
-            <div class="hero-subtitle">Trusted by Fortune 500 Companies</div>
-            <h1>Expert Reactive Metal Fabrication & Alloy Inspection</h1>
-            <p class="hero-description">
-                Leading specialists in titanium, zirconium, and tantalum fabrication design, consultation, and inspection services. 
-                Trusted by Albemarle for over 10 years in lithium processing equipment and chemical industry applications.
-            </p>
-            
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">10+</span>
-                    <span class="stat-label">Years with Albemarle</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Projects Completed</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">99.9%</span>
-                    <span class="stat-label">Success Rate</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Emergency Support</span>
-                </div>
-            </div>
-            
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Get Consultation</a>
-                <a href="#services" class="btn btn-secondary">View Services</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Albemarle Partnership Section -->
-    <section id="about" class="albemarle-partnership">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>Trusted Partner of Albemarle Corporation</h2>
-                <p>Over a decade of proven excellence in lithium processing equipment fabrication and inspection services</p>
-            </div>
-            
-            <div class="partnership-content">
-                <div class="partnership-text fade-in">
-                    <h3>A Decade of Excellence in Lithium Processing</h3>
-                    <p>
-                        Since 2014, Fiberglass Technical Group has been Albemarle Corporation's trusted partner for specialized 
-                        fabrication and inspection services. Our expertise in reactive metal systems has been instrumental in 
-                        supporting Albemarle's lithium extraction and processing operations across their global facilities.
-                    </p>
-                    <p>
-                        From their Silver Peak operations in Nevada to their advanced Kemerton facility in Australia, 
-                        we've provided critical inspection and consultation services for titanium, zirconium, and tantalum 
-                        systems that handle the most demanding chemical processing environments.
-                    </p>
-                    
-                    <div class="partnership-highlights">
-                        <div class="highlight-item">
-                            <h4>Lithium Hydroxide Processing</h4>
-                            <p>Specialized equipment for battery-grade lithium production</p>
-                        </div>
-                        <div class="highlight-item">
-                            <h4>Spodumene Ore Processing</h4>
-                            <p>Heat exchangers and reactors for hard rock lithium extraction</p>
-                        </div>
-                        <div class="highlight-item">
-                            <h4>Brine Concentration Systems</h4>
-                            <p>Corrosion-resistant tanks for lithium brine processing</p>
-                        </div>
-                        <div class="highlight-item">
-                            <h4>Chemical Recovery Systems</h4>
-                            <p>Advanced alloy fabrications for chemical recovery processes</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="partnership-visual fade-in">
-                    <svg width="100%" height="100%" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Lithium Processing Visualization -->
-                        <defs>
-                            <linearGradient id="lithiumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:0.8" />
-                                <stop offset="100%" style="stop-color:#1E3A8A;stop-opacity:0.6" />
-                            </linearGradient>
-                            <linearGradient id="processGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#C0C0C0;stop-opacity:0.8" />
-                                <stop offset="100%" style="stop-color:#A8B5B8;stop-opacity:0.6" />
-                            </linearGradient>
-                        </defs>
-                        
-                        <!-- Processing Tank -->
-                        <rect x="150" y="100" width="100" height="150" rx="10" fill="url(#lithiumGrad)" opacity="0.7"/>
-                        <rect x="160" y="110" width="80" height="100" rx="5" fill="url(#processGrad)" opacity="0.5"/>
-                        
-                        <!-- Pipes and Connections -->
-                        <rect x="100" y="170" width="50" height="10" rx="5" fill="#D4AF37"/>
-                        <rect x="250" y="170" width="50" height="10" rx="5" fill="#D4AF37"/>
-                        
-                        <!-- Molecular Representation -->
-                        <g transform="translate(200,175)">
-                            <circle cx="0" cy="0" r="8" fill="#D4AF37" opacity="0.8"/>
-                            <text x="0" y="5" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Li</text>
-                        </g>
-                        
-                        <!-- Flow indicators -->
-                        <path d="M120 160 L140 160 M130 155 L140 160 L130 165" stroke="#D4AF37" stroke-width="2" fill="none"/>
-                        <path d="M260 160 L280 160 M270 155 L280 160 L270 165" stroke="#D4AF37" stroke-width="2" fill="none"/>
-                        
-                        <!-- Labels -->
-                        <text x="200" y="50" text-anchor="middle" font-size="14" font-weight="bold" fill="#2C2C2C">LITHIUM PROCESSING</text>
-                        <text x="200" y="320" text-anchor="middle" font-size="12" fill="#4A4A4A">Albemarle Partnership Excellence</text>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2 style="color: white;">What We Offer</h2>
-                <p style="color: rgba(255,255,255,0.8);">Comprehensive reactive metal fabrication and inspection services for the chemical processing industry</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">⚛️</div>
-                    <h3>Reactive Metal Design</h3>
-                    <div class="service-subtitle">Ti • Zr • Ta Engineering</div>
-                    <p>Advanced engineering design for titanium, zirconium, and tantalum fabrications in extreme chemical environments. Custom solutions for lithium processing and chemical manufacturing.</p>
-                    <ul class="service-features">
-                        <li>Material compatibility analysis</li>
-                        <li>Corrosion resistance optimization</li>
-                        <li>ASME code compliance design</li>
-                        <li>Thermal stress calculations</li>
-                        <li>Process optimization consulting</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">🔍</div>
-                    <h3>Precision Inspection</h3>
-                    <div class="service-subtitle">Quality Assurance</div>
-                    <p>Comprehensive inspection services ensuring the highest quality standards for reactive metal fabrications and chemical processing equipment.</p>
-                    <ul class="service-features">
-                        <li>Non-destructive testing (NDT)</li>
-                        <li>Material certification review</li>
-                        <li>Weld quality assessment</li>
-                        <li>Dimensional inspection</li>
-                        <li>Performance validation</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">🔬</div>
-                    <h3>Expert Consultation</h3>
-                    <div class="service-subtitle">Technical Advisory</div>
-                    <p>Specialized consultation for material selection, process optimization, and failure analysis in chemical processing applications.</p>
-                    <ul class="service-features">
-                        <li>Material selection guidance</li>
-                        <li>Chemical compatibility assessment</li>
-                        <li>Failure analysis and prevention</li>
-                        <li>Process improvement strategies</li>
-                        <li>Training and knowledge transfer</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reactive Metals Section -->
-    <section class="reactive-metals">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>Reactive Metal Expertise</h2>
-                <p>Specialized knowledge in the most demanding reactive metals for chemical processing applications</p>
-            </div>
-            
-            <div class="metals-grid">
-                <div class="metal-card titanium fade-in">
-                    <div class="metal-symbol">Ti</div>
-                    <h3>Titanium Systems</h3>
-                    <div class="atomic-info">Atomic Number: 22 | Excellent Corrosion Resistance</div>
-                    <ul class="metal-applications">
-                        <li>Chemical processing vessels</li>
-                        <li>Heat exchangers for corrosive media</li>
-                        <li>Lithium processing equipment</li>
-                        <li>Pharmaceutical grade systems</li>
-                        <li>High-purity applications</li>
-                    </ul>
-                </div>
-                
-                <div class="metal-card zirconium fade-in">
-                    <div class="metal-symbol">Zr</div>
-                    <h3>Zirconium Solutions</h3>
-                    <div class="atomic-info">Atomic Number: 40 | Superior HCl Resistance</div>
-                    <ul class="metal-applications">
-                        <li>Hydrochloric acid service</li>
-                        <li>Strong alkali environments</li>
-                        <li>Salt solution processing</li>
-                        <li>Chemical reactor vessels</li>
-                        <li>Erosion-resistant components</li>
-                    </ul>
-                </div>
-                
-                <div class="metal-card tantalum fade-in">
-                    <div class="metal-symbol">Ta</div>
-                    <h3>Tantalum Applications</h3>
-                    <div class="atomic-info">Atomic Number: 73 | Extreme Chemical Inertness</div>
-                    <ul class="metal-applications">
-                        <li>Extreme corrosive conditions</li>
-                        <li>High-temperature reactors</li>
-                        <li>Specialty chemical processing</li>
-                        <li>Ultra-pure environments</li>
-                        <li>Critical pharmaceutical systems</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>What Our Clients Say</h2>
-                <p>Trusted partnerships built on excellence and reliability</p>
-            </div>
-            
-            <div class="testimonial-card fade-in">
-                <div class="testimonial-text">
-                    Fiberglass Technical Group has been instrumental in our lithium processing operations. Their expertise in reactive metal systems and attention to detail has consistently exceeded our expectations. The quality of their inspection services and technical consultation has been vital to our success in delivering high-purity lithium products for the battery industry.
-                </div>
-                <div class="testimonial-author">Dr. Sarah Mitchell</div>
-                <div class="testimonial-company">Senior Process Engineer, Albemarle Corporation</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2 style="color: white;">Get Expert Consultation</h2>
-                <p style="color: rgba(255,255,255,0.8);">Ready to discuss your reactive metal fabrication needs? Contact our specialists today.</p>
-            </div>
-            
-            <div class="contact-content">
-                <div class="contact-info fade-in">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@fiberglasstechnicalgroup.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>Available upon request for qualified projects</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🌍</div>
-                        <div>
-                            <h4>Global Service</h4>
-                            <p>Worldwide project support and consultation</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">⚡</div>
-                        <div>
-                            <h4>Emergency Response</h4>
-                            <p>24/7 availability for critical applications</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form fade-in">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Company *</label>
-                            <input type="text" id="company" name="company" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Required</label>
-                            <select id="service" name="service">
-                                <option value="">Select a service</option>
-                                <option value="reactive-metal-design">Reactive Metal Design</option>
-                                <option value="inspection-services">Inspection Services</option>
-                                <option value="consultation">Expert Consultation</option>
-                                <option value="material-selection">Material Selection</option>
-                                <option value="emergency-support">Emergency Support</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Project Details *</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Please describe your project requirements, chemical applications, and specific needs..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Fiberglass Technical Group</h4>
-                    <p>Leading specialists in reactive metal fabrication design, consultation, and inspection services for the chemical processing industry. Trusted by Fortune 500 companies.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Core Services</h4>
-                    <p><a href="#services">Reactive Metal Design</a></p>
-                    <p><a href="#services">Precision Inspection</a></p>
-                    <p><a href="#services">Expert Consultation</a></p>
-                    <p><a href="#services">Material Selection</a></p>
-                </div>
-                <div class="footer-section">
-                    <h4>Specializations</h4>
-                    <p>Titanium Systems</p>
-                    <p>Zirconium Solutions</p>
-                    <p>Tantalum Applications</p>
-                    <p>Lithium Processing Equipment</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Industries</h4>
-                    <p>Chemical Processing</p>
-                    <p>Lithium Production</p>
-                    <p>Pharmaceutical Manufacturing</p>
-                    <p>Specialty Chemicals</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Fiberglass Technical Group. All rights reserved. | Expert Reactive Metal Fabrication Services | Trusted by Albemarle Corporation</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-                document.querySelector('.nav-menu').classList.remove('active');
-            });
-        });
-
-        // Header background change on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(44, 44, 44, 0.98)';
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
-            } else {
-                header.style.background = 'rgba(44, 44, 44, 0.95)';
-                header.style.boxShadow = 'none';
-            }
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Enhanced form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const company = formData.get('company');
-            const email = formData.get('email');
-            const service = formData.get('service') || 'General inquiry';
-            const message = formData.get('message');
-            
-            if (!name || !company || !email || !message) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            const emailSubject = encodeURIComponent(`FTG Consultation Request - ${service}`);
-            const emailBody = encodeURIComponent(`
-FIBERGLASS TECHNICAL GROUP - CONSULTATION REQUEST
-
-CLIENT INFORMATION:
-Name: ${name}
-Company: ${company}
-Email: ${email}
-
-SERVICE REQUIRED: ${service}
-
-PROJECT DETAILS:
-${message}
-
-SPECIALIZED CAPABILITIES:
-✓ Reactive Metal Design (Ti, Zr, Ta)
-✓ Precision Inspection Services
-✓ Expert Consultation
-✓ Material Selection & Compatibility
-✓ Chemical Processing Applications
-✓ Lithium Processing Equipment
-✓ Albemarle Partnership Excellence
-
-This consultation request was submitted through fiberglasstechnicalgroup.com
-Please respond within 24 hours for priority projects.
-
----
-Fiberglass Technical Group
-Expert Reactive Metal Fabrication Services
-info@fiberglasstechnicalgroup.com
-            `);
-            
-            const mailtoLink = `mailto:info@fiberglasstechnicalgroup.com?subject=${emailSubject}&body=${emailBody}`;
-            
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                window.location.href = mailtoLink;
-                alert(`Thank you ${name}! Your consultation request has been prepared. Our reactive metal specialists will respond within 24 hours.`);
-                this.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 1000);
-        });
-
-        // Interactive elements enhancement
-        document.querySelectorAll('.service-card, .metal-card, .highlight-item').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        console.log('🚀 Fiberglass Technical Group Website Loaded');
-        console.log('⚛️ Specializing in Reactive Metal Fabrication');
-        console.log('🤝 Trusted Albemarle Partner for 10+ Years');
-    </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiberglass Technical Group | Expert Reactive Metal Fabrication & Alloy Inspection Services</title>
-    <meta name="description" content="Leading specialists in reactive metal fabrication design, consultation, and inspection for titanium, zirconium, and tantalum systems. Trusted by Albemarle for 10+ years of lithium processing equipment expertise.">
-    <meta name="keywords" content="reactive metal fabrication, titanium tank inspection, zirconium vessel design, tantalum alloy consultation, lithium processing equipment, Albemarle contractor, chemical tank fabrication, fiberglass inspection services, FRP tank design, ASME pressure vessel inspection">
+    <title>Fiberglass Technical Group | Expert Reactive Metal Fabrication & Inspection Services</title>
+    <meta name="description" content="Leading reactive metal fabrication specialists serving chemical processing industries. Expert titanium, zirconium, and tantalum design, inspection, and consultation services. Trusted by Albemarle for 10+ years.">
+    <meta name="keywords" content="reactive metal fabrication, titanium inspection, zirconium tank design, tantalum consultation, chemical processing equipment, lithium processing, ASME pressure vessel, fiberglass tank inspection">
     
     <!-- SEO Meta Tags -->
     <meta property="og:title" content="Fiberglass Technical Group - Reactive Metal Fabrication Experts">
-    <meta property="og:description" content="Trusted by Albemarle for lithium processing equipment. Expert reactive metal fabrication design, consultation, and inspection services.">
+    <meta property="og:description" content="Expert reactive metal fabrication and inspection services for chemical processing industries. Specializing in titanium, zirconium, and tantalum systems.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://fiberglasstechnicalgroup.com">
-    <meta name="robots" content="index, follow">
     
-    <!-- Professional Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
@@ -847,24 +23,23 @@ info@fiberglasstechnicalgroup.com
             --warm-white: #FAFAFA;
             --accent-blue: #1E3A8A;
             --success-green: #059669;
-            --warning-red: #DC2626;
             --reactive-titanium: #C0C0C0;
             --reactive-zirconium: #A8B5B8;
             --reactive-tantalum: #73716E;
         }
         
         * {
-            margin: top;
+            margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--dark-charcoal);
-            overflow-x: hidden;
             background: var(--warm-white);
+            overflow-x: hidden;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -873,14 +48,14 @@ info@fiberglasstechnicalgroup.com
             letter-spacing: -0.025em;
         }
         
-        /* Header & Navigation */
+        /* Header */
         .header {
             position: fixed;
             top: 0;
             width: 100%;
             background: rgba(44, 44, 44, 0.95);
             backdrop-filter: blur(20px);
-            z-index: 2000;
+            z-index: 1000;
             transition: all 0.3s ease;
             padding: 1rem 0;
             border-bottom: 2px solid var(--primary-gold);
@@ -900,11 +75,6 @@ info@fiberglasstechnicalgroup.com
             align-items: center;
             text-decoration: none;
             color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .logo-container:hover {
-            transform: scale(1.05);
         }
         
         .logo-symbol {
@@ -916,23 +86,11 @@ info@fiberglasstechnicalgroup.com
             align-items: center;
             justify-content: center;
             margin-right: 1rem;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s ease;
         }
         
-        .logo-symbol::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s;
-        }
-        
-        .logo-container:hover .logo-symbol::before {
-            left: 100%;
+        .logo-symbol:hover {
+            transform: rotate(5deg) scale(1.05);
         }
         
         .logo-text {
@@ -968,31 +126,13 @@ info@fiberglasstechnicalgroup.com
             transition: all 0.3s ease;
             font-weight: 500;
             font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            position: relative;
             padding: 0.5rem 1rem;
             border-radius: 6px;
-        }
-        
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            background: var(--primary-gold);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
         }
         
         .nav-menu a:hover {
             background: rgba(212, 175, 55, 0.1);
             transform: translateY(-2px);
-        }
-        
-        .nav-menu a:hover::after {
-            width: 80%;
         }
         
         .nav-menu a.active {
@@ -1016,7 +156,7 @@ info@fiberglasstechnicalgroup.com
             background: var(--primary-gold);
             color: var(--dark-charcoal);
         }
-        
+
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -1032,40 +172,17 @@ info@fiberglasstechnicalgroup.com
             flex-wrap: nowrap;
             align-content: center;
             flex-direction: column;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 60%, rgba(30, 58, 138, 0.1) 0%, transparent 50%);
-            animation: subtle-pulse 8s ease-in-out infinite;
+            padding-top: 120px;
         }
         
         .hero-content {
             max-width: 1000px;
             padding: 0 2rem;
-            position: relative;
-            z-index: 2;
             animation: fadeInUp 1.2s ease-out;
         }
         
-        .hero-subtitle {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            color: var(--primary-gold);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            animation: fadeInUp 1.5s ease-out 0.3s both;
-        }
-        
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: 4rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
             line-height: 1.1;
@@ -1073,61 +190,51 @@ info@fiberglasstechnicalgroup.com
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: fadeInUp 1.8s ease-out 0.6s both;
         }
         
-        .hero-description {
-            font-size: 1.3rem;
+        .hero-subtitle {
+            font-size: 1.5rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            opacity: 0.95;
             line-height: 1.6;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: fadeInUp 2.1s ease-out 0.9s both;
         }
         
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-            animation: fadeInUp 2.4s ease-out 1.2s both;
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
         
-        .stat-item {
-            text-align: center;
-            padding: 1.5rem;
+        .feature-item {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            border-radius: 12px;
+            padding: 2rem;
+            border-radius: 15px;
             border: 1px solid rgba(212, 175, 55, 0.3);
             transition: all 0.3s ease;
-            min-width: 150px;
         }
         
-        .stat-item:hover {
-            transform: translateY(-5px) scale(1.05);
+        .feature-item:hover {
+            transform: translateY(-8px) scale(1.05);
             background: rgba(212, 175, 55, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
-        .stat-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2.5rem;
-            font-weight: 700;
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
             color: var(--primary-gold);
-            display: block;
-            margin-bottom: 0.5rem;
         }
         
-        .stat-label {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
+        .feature-item h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .feature-item p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
         }
         
         .cta-buttons {
@@ -1135,7 +242,7 @@ info@fiberglasstechnicalgroup.com
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 2.7s ease-out 1.5s both;
+            margin-top: 2rem;
         }
         
         .btn {
@@ -1148,37 +255,13 @@ info@fiberglasstechnicalgroup.com
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
             text-transform: uppercase;
-        }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .btn:hover::before {
-            left: 100%;
+            letter-spacing: 0.5px;
         }
         
         .btn-primary {
             background: linear-gradient(135deg, var(--primary-gold), #F4E04D);
             color: var(--dark-charcoal);
-            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.5);
         }
         
         .btn-secondary {
@@ -1187,66 +270,44 @@ info@fiberglasstechnicalgroup.com
             border: 2px solid var(--primary-gold);
         }
         
-        .btn-secondary:hover {
-            background: var(--primary-gold);
-            color: var(--dark-charcoal);
+        .btn:hover {
             transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
-        /* Floating Particles */
-        .floating-particles {
+        /* Slider */
+        .slider-container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .slide {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
-            overflow: hidden;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
         }
         
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--primary-gold);
-            border-radius: 50%;
-            opacity: 0.6;
-            animation: float-particle 15s linear infinite;
+        .slide.active {
+            opacity: 1;
         }
         
-        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
-        .particle:nth-child(2) { left: 20%; animation-delay: 2s; }
-        .particle:nth-child(3) { left: 30%; animation-delay: 4s; }
-        .particle:nth-child(4) { left: 40%; animation-delay: 6s; }
-        .particle:nth-child(5) { left: 50%; animation-delay: 8s; }
-        .particle:nth-child(6) { left: 60%; animation-delay: 10s; }
-        .particle:nth-child(7) { left: 70%; animation-delay: 12s; }
-        .particle:nth-child(8) { left: 80%; animation-delay: 14s; }
-        
-        /* Albemarle Partnership Section */
-        .albemarle-partnership {
+        /* About Section */
+        .about {
             padding: 6rem 0;
-            background: linear-gradient(135deg, var(--warm-white), #f8f9fa);
-            position: relative;
-        }
-        
-        .albemarle-partnership::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="lithium-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="2" fill="rgba(212, 175, 55, 0.1)"/><circle cx="15" cy="15" r="1.5" fill="rgba(30, 58, 138, 0.1)"/><circle cx="45" cy="45" r="1.5" fill="rgba(192, 192, 192, 0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23lithium-pattern)"/></svg>') repeat;
-            opacity: 0.4;
+            background: linear-gradient(135deg, #f8f9fa, var(--warm-white));
         }
         
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
-            position: relative;
-            z-index: 2;
         }
         
         .section-header {
@@ -1256,98 +317,82 @@ info@fiberglasstechnicalgroup.com
         
         .section-header h2 {
             font-size: 3rem;
-            margin-bottom: 1.5rem;
             color: var(--dark-charcoal);
-            position: relative;
-        }
-        
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(45deg, var(--primary-gold), #F4E04D);
-            border-radius: 2px;
+            margin-bottom: 1rem;
         }
         
         .section-header p {
             font-size: 1.2rem;
             color: var(--light-charcoal);
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
-            line-height: 1.7;
         }
         
-        .partnership-content {
+        .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            margin-bottom: 4rem;
         }
         
-        .partnership-text {
-            padding: 2rem;
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--light-charcoal);
         }
         
-        .partnership-text h3 {
-            font-size: 2rem;
+        .about-text h3 {
             color: var(--dark-charcoal);
             margin-bottom: 1.5rem;
+            font-size: 2rem;
         }
         
-        .partnership-text p {
-            font-size: 1.1rem;
-            color: var(--light-charcoal);
-            line-height: 1.7;
+        .about-text p {
             margin-bottom: 1.5rem;
         }
         
-        .partnership-highlights {
+        .about-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
             margin-top: 2rem;
         }
         
-        .highlight-item {
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
             background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            border-left: 4px solid var(--primary-gold);
-            transition: all 0.3s ease;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
-        .highlight-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .highlight-item h4 {
-            color: var(--accent-blue);
+        .stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            display: block;
             margin-bottom: 0.5rem;
-            font-size: 1.1rem;
         }
         
-        .highlight-item p {
+        .stat-label {
             color: var(--light-charcoal);
-            font-size: 0.95rem;
-            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
         
-        .partnership-visual {
+        .about-image {
             position: relative;
-            height: 400px;
-            background: linear-gradient(135deg, #e8f4fd, #f0f9ff);
             border-radius: 20px;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
         }
         
         /* Services Section */
@@ -1355,88 +400,48 @@ info@fiberglasstechnicalgroup.com
             padding: 6rem 0;
             background: var(--dark-charcoal);
             color: white;
-            position: relative;
-        }
-        
-        .services::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><defs><pattern id="metal-grid" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="2" fill="rgba(212, 175, 55, 0.1)"/><circle cx="60" cy="60" r="2" fill="rgba(192, 192, 192, 0.1)"/><path d="M0,40 L80,40 M40,0 L40,80" stroke="rgba(212, 175, 55, 0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23metal-grid)"/></svg>') repeat;
-            opacity: 0.3;
         }
         
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 3rem;
-            position: relative;
-            z-index: 2;
+            margin-top: 3rem;
         }
         
         .service-card {
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
             padding: 3rem;
             border-radius: 20px;
             border: 1px solid rgba(212, 175, 55, 0.2);
             transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(135deg, var(--primary-gold), var(--reactive-titanium));
+            text-align: center;
         }
         
         .service-card:hover {
-            transform: translateY(-10px) scale(1.02);
             background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             border-color: var(--primary-gold);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
         }
         
         .service-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary-gold), #F4E04D);
-            border-radius: 16px;
+            width: 100px;
+            height: 100px;
+            background: var(--primary-gold);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 2rem;
+            margin: 0 auto 2rem;
             color: var(--dark-charcoal);
-            font-size: 2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+            font-size: 3rem;
         }
         
         .service-card h3 {
             color: white;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .service-card .service-subtitle {
-            color: var(--primary-gold);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             margin-bottom: 1.5rem;
-            font-weight: 600;
+            font-size: 1.8rem;
         }
         
         .service-card p {
@@ -1447,148 +452,718 @@ info@fiberglasstechnicalgroup.com
         
         .service-features {
             list-style: none;
+            text-align: left;
         }
         
         .service-features li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.9);
-            font-size: 0.95rem;
+            position: relative;
+            padding-left: 2rem;
         }
         
         .service-features li::before {
-            content: '▶';
+            content: '✓';
             position: absolute;
             left: 0;
-            color: var(--primary-gold);
-            font-size: 0.8rem;
+            color: var(--success-green);
+            font-weight: bold;
         }
         
-        /* Reactive Metals Section */
-        .reactive-metals {
+        /* Contact Section */
+        .contact {
             padding: 6rem 0;
-            background: linear-gradient(135deg, #f8f9fa, var(--warm-white));
+            background: linear-gradient(135deg, var(--accent-blue), var(--primary-gold));
+            color: white;
         }
         
-        .metals-grid {
+        .contact-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
         }
         
-        .metal-card {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            position: relative;
-            overflow: hidden;
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: white;
         }
         
-        .metal-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
             transition: all 0.3s ease;
         }
         
-        .metal-card.titanium::before {
-            background: linear-gradient(135deg, var(--reactive-titanium), #E8E8E8);
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(10px);
         }
         
-        .metal-card.zirconium::before {
-            background: linear-gradient(135deg, var(--reactive-zirconium), #D3D3D3);
-        }
-        
-        .metal-card.tantalum::before {
-            background: linear-gradient(135deg, var(--reactive-tantalum), #A0A0A0);
-        }
-        
-        .metal-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
-        }
-        
-        .metal-symbol {
-            width: 80px;
-            height: 80px;
-            border-radius: 16px;
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gold);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 2rem;
+            margin-right: 1rem;
+            color: var(--dark-charcoal);
+            font-size: 1.2rem;
+        }
+        
+        .contact-text h4 {
             color: white;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.8rem;
-            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-text p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
             transition: all 0.3s ease;
         }
         
-        .metal-card.titanium .metal-symbol {
-            background: linear-gradient(135deg, var(--reactive-titanium), #A0A0A0);
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
         }
         
-        .metal-card.zirconium .metal-symbol {
-            background: linear-gradient(135deg, var(--reactive-zirconium), #8A9BA8);
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            background: rgba(255, 255, 255, 0.2);
         }
         
-        .metal-card.tantalum .metal-symbol {
-            background: linear-gradient(135deg, var(--reactive-tantalum), #5A5A5A);
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
         }
         
-        .metal-card h3 {
+        .btn-submit {
+            background: var(--primary-gold);
             color: var(--dark-charcoal);
-            margin-bottom: 1rem;
-            font-size: 1.6rem;
+            width: 100%;
+            padding: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        .atomic-info {
-            color: var(--light-charcoal);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
+        .btn-submit:hover {
+            background: #F4E04D;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
-        .metal-applications {
-            list-style: none;
-        }
-        
-        .metal-applications li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--light-charcoal);
-            font-size: 0.95rem;
-        }
-        
-        .metal-applications li::before {
-            content: '⚛';
-            position: absolute;
-            left: 0;
-            color: var(--primary-gold);
-            font-size: 0.8rem;
-        }
-        
-        /* Testimonials Section */
-        .testimonials {
-            padding: 6rem 0;
-            background: var(--warm-white);
-            position: relative;
-        }
-        
-        .testimonial-card {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        /* Footer */
+        .footer {
+            background: var(--dark-charcoal);
+            color: white;
+            padding: 3rem 0 1rem;
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            border: 1px solid rgba(212,
+            border-top: 3px solid var(--primary-gold);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+        
+        .footer-section a:hover {
+            color: var(--primary-gold);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding-top: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark-charcoal);
+                padding: 1rem;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+                border-top: 1px solid var(--primary-gold);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 0.5rem 0;
+            }
+            
+            .nav-menu a {
+                padding: 1rem;
+                display: block;
+                text-align: center;
+                border-radius: 8px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-features {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo-container">
+                <div class="logo-symbol">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M12 20h16M20 12v16" stroke="currentColor" stroke-width="3"/>
+                        <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.3"/>
+                        <circle cx="16" cy="16" r="2" fill="currentColor"/>
+                        <circle cx="24" cy="24" r="2" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <div class="logo-main">FIBERGLASS TECHNICAL GROUP</div>
+                    <div class="logo-sub">Reactive Metal Specialists</div>
+                </div>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="slider-container">
+            <div class="slide active" style="background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(30, 58, 138, 0.7)), url('images/ftg-vessel-fabrication.jpg')"></div>
+            <div class="slide" style="background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(30, 58, 138, 0.7)), url('images/ftg-tank-inspection.jpg')"></div>
+            <div class="slide" style="background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(30, 58, 138, 0.7)), url('images/ftg-facility-photo.jpg')"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Expert Reactive Metal Fabrication & Inspection</h1>
+            <p class="hero-subtitle">Leading specialists in titanium, zirconium, and tantalum systems for chemical processing industries. Trusted by Albemarle for over 10 years.</p>
+            
+            <div class="hero-features">
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">⚛️</div>
+                    <h3>Reactive Metal Design</h3>
+                    <p>Expert engineering for titanium, zirconium, and tantalum fabrications</p>
+                </div>
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Precision Inspection</h3>
+                    <p>Comprehensive quality assurance and compliance verification</p>
+                </div>
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Expert Consultation</h3>
+                    <p>Specialized advisory services for chemical processing applications</p>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get Expert Consultation</a>
+                <a href="services.html" class="btn btn-secondary">View Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>About Fiberglass Technical Group</h2>
+                <p>Leading the industry in reactive metal fabrication expertise and chemical processing solutions</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>Decades of Expertise in Reactive Metals</h3>
+                    <p>Fiberglass Technical Group has been at the forefront of reactive metal fabrication and inspection services for the chemical processing industry. Our deep expertise in titanium, zirconium, and tantalum systems has made us the trusted partner for major corporations including Albemarle Corporation.</p>
+                    
+                    <p>We specialize in the most challenging environments where standard materials fail. Our team of certified engineers and inspectors ensures that every project meets the highest standards of quality, safety, and performance.</p>
+                    
+                    <p>From initial design consultation to final inspection and ongoing maintenance support, we provide comprehensive solutions that keep your operations running safely and efficiently.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <div class="stat-label">Years with Albemarle</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">99.9%</span>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <div class="stat-label">Emergency Support</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image fade-in">
+                    <img src="images/ftg-about-image.jpg" alt="FTG Team" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 style="color: white;">Our Core Services</h2>
+                <p style="color: rgba(255,255,255,0.8);">Comprehensive reactive metal solutions for the most demanding applications</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">⚛️</div>
+                    <h3>Reactive Metal Design</h3>
+                    <p>Advanced engineering design and material selection for titanium, zirconium, and tantalum fabrications specialized for chemical processing environments.</p>
+                    <ul class="service-features">
+                        <li>Material compatibility analysis</li>
+                        <li>ASME code compliance design</li>
+                        <li>Corrosion resistance optimization</li>
+                        <li>Process optimization consulting</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔍</div>
+                    <h3>Precision Inspection</h3>
+                    <p>Comprehensive inspection services ensuring the highest quality standards for reactive metal fabrications and chemical processing equipment.</p>
+                    <ul class="service-features">
+                        <li>Non-destructive testing (NDT)</li>
+                        <li>Material certification review</li>
+                        <li>Weld quality assessment</li>
+                        <li>Compliance verification</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔬</div>
+                    <h3>Expert Consultation</h3>
+                    <p>Specialized consultation for material selection, process optimization, and failure analysis in chemical processing applications.</p>
+                    <ul class="service-features">
+                        <li>Material selection guidance</li>
+                        <li>Failure analysis and prevention</li>
+                        <li>Process improvement strategies</li>
+                        <li>Risk assessment and mitigation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h2>Ready to Start Your Project?</h2>
+                    <p>Get in touch with our reactive metal specialists today. We're here to help you find the perfect solution for your chemical processing needs.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">👤</div>
+                            <div class="contact-text">
+                                <h4>Project Manager</h4>
+                                <p>Matthew McCoy</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>(225) 571-4899</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>fibtechgroup@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <h4>Address</h4>
+                                <p>P.O. Box 78041<br>Baton Rouge, LA 70837</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">⚡</div>
+                            <div class="contact-text">
+                                <h4>Emergency Support</h4>
+                                <p>24/7 Available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form fade-in">
+                    <form action="mailto:fibtechgroup@gmail.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Your company name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@company.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
+                                <option value="reactive-metal-design">Reactive Metal Design</option>
+                                <option value="precision-inspection">Precision Inspection</option>
+                                <option value="expert-consultation">Expert Consultation</option>
+                                <option value="emergency-service">Emergency Service</option>
+                                <option value="general-inquiry">General Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project requirements, timeline, and any specific challenges you're facing..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Fiberglass Technical Group</h4>
+                    <p>Leading specialists in reactive metal fabrication design, consultation, and inspection services for the chemical processing industry.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Core Services</h4>
+                    <p><a href="services.html">Reactive Metal Design</a></p>
+                    <p><a href="services.html">Precision Inspection</a></p>
+                    <p><a href="services.html">Expert Consultation</a></p>
+                    <p><a href="services.html">Material Selection</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Specializations</h4>
+                    <p>Titanium Systems</p>
+                    <p>Zirconium Solutions</p>
+                    <p>Tantalum Applications</p>
+                    <p>Lithium Processing Equipment</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Matthew McCoy</p>
+                    <p>P.O. Box 78041</p>
+                    <p>Baton Rouge, LA 70837</p>
+                    <p>Phone: (225) 571-4899</p>
+                    <p>Email: fibtechgroup@gmail.com</p>
+                    <p>24/7 Emergency Support</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fiberglass Technical Group. All rights reserved. | Expert Reactive Metal Fabrication Services</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+            this.textContent = this.textContent === '☰' ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+                document.querySelector('.mobile-menu-toggle').textContent = '☰';
+            });
+        });
+
+        // Hero slider functionality
+        const slideImages = [
+            'images/ftg-vessel-fabrication.jpg',
+            'images/ftg-tank-inspection.jpg',
+            'images/ftg-facility-photo.jpg'
+        ];
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Auto-advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 44, 44, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.background = 'rgba(44, 44, 44, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Form enhancement
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const company = formData.get('company');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const service = formData.get('service');
+            const message = formData.get('message');
+            
+            // Create email body
+            const emailBody = `Hello Matthew,
+
+I am interested in FTG's reactive metal fabrication and inspection services.
+
+Contact Information:
+- Name: ${name}
+- Company: ${company || 'Not provided'}
+- Email: ${email}
+- Phone: ${phone || 'Not provided'}
+- Service Interest: ${service || 'General Inquiry'}
+
+Project Details:
+${message || 'No additional details provided'}
+
+Please contact me to discuss:
+- Project requirements
+- Timeline and availability
+- Consultation scheduling
+
+Thank you,
+${name}`;
+
+            // Create mailto link
+            const subject = encodeURIComponent('FTG Expert Consultation Request');
+            const body = encodeURIComponent(emailBody);
+            const mailtoLink = `mailto:fibtechgroup@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show confirmation
+            alert('Thank you for your inquiry! Your email client should now open with a pre-filled message. Please send the email to complete your request.');
+        });
+
+        console.log('🚀 FTG Homepage Loaded Successfully');
+        console.log('⚛️ Expert Reactive Metal Fabrication & Inspection Services');
+    </script>
+</body>
+</html>

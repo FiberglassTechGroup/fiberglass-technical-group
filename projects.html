@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Projects | Fiberglass Technical Group - Portfolio & Case Studies</title>
-    <meta name="description" content="Explore our portfolio of reactive metal fabrication projects including titanium, zirconium, and tantalum systems for Albemarle and other leading chemical companies.">
-    <meta name="keywords" content="reactive metal projects, titanium fabrication portfolio, chemical processing equipment, lithium processing tanks, Albemarle projects, fiberglass inspection case studies">
+    <title>Projects Portfolio | Fiberglass Technical Group - Reactive Metal Fabrication Examples</title>
+    <meta name="description" content="Explore FTG's comprehensive portfolio of reactive metal fabrication projects including titanium, zirconium, and tantalum systems for chemical processing industries.">
+    <meta name="keywords" content="reactive metal projects, titanium fabrication portfolio, zirconium vessel projects, tantalum system examples, chemical processing equipment, lithium processing projects">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
@@ -41,7 +41,7 @@
             letter-spacing: -0.025em;
         }
         
-        /* Header - Same as other pages */
+        /* Header */
         .header {
             position: fixed;
             top: 0;
@@ -128,6 +128,18 @@
             color: var(--dark-charcoal);
         }
         
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
         /* Page Header */
         .page-header {
             padding: 8rem 0 4rem;
@@ -196,16 +208,16 @@
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
         }
         
-        /* Portfolio Grid */
-        .portfolio {
+        /* Projects Grid */
+        .projects-section {
             padding: 4rem 0;
             background: linear-gradient(135deg, #f8f9fa, var(--warm-white));
         }
         
-        .portfolio-grid {
+        .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
             margin-top: 2rem;
         }
         
@@ -215,18 +227,17 @@
             overflow: hidden;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
             transition: all 0.4s ease;
-            cursor: pointer;
             position: relative;
         }
         
         .project-card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-10px);
             box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
         }
         
         .project-image {
             position: relative;
-            height: 300px;
+            height: 250px;
             overflow: hidden;
         }
         
@@ -241,79 +252,28 @@
             transform: scale(1.1);
         }
         
-        .project-overlay {
+        .project-badge {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(44, 44, 44, 0.9), rgba(212, 175, 55, 0.8));
-            opacity: 0;
-            transition: all 0.4s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-        
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-        
-        .overlay-content {
-            text-align: center;
-            color: white;
-            transform: translateY(20px);
-            transition: all 0.4s ease 0.1s;
-        }
-        
-        .project-card:hover .overlay-content {
-            transform: translateY(0);
-        }
-        
-        .overlay-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-        
-        .overlay-content p {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-        }
-        
-        .project-tags {
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .project-tag {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-gold);
+            color: var(--dark-charcoal);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
             font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .project-content {
-            padding: 2rem;
-        }
-        
-        .project-content h3 {
-            color: var(--dark-charcoal);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
+            padding: 2.5rem;
         }
         
         .project-meta {
             display: flex;
             gap: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             flex-wrap: wrap;
         }
         
@@ -337,153 +297,275 @@
             font-size: 0.7rem;
         }
         
+        .project-content h3 {
+            color: var(--dark-charcoal);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
         .project-description {
             color: var(--light-charcoal);
             line-height: 1.6;
             margin-bottom: 1.5rem;
         }
         
-        .project-features {
-            list-style: none;
+        .project-specs {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
         }
         
-        .project-features li {
-            padding: 0.3rem 0;
+        .project-specs h4 {
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .specs-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.8rem;
+        }
+        
+        .specs-list li {
             color: var(--light-charcoal);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             position: relative;
             padding-left: 1.5rem;
         }
         
-        .project-features li::before {
+        .specs-list li::before {
             content: '▶';
             position: absolute;
             left: 0;
             color: var(--primary-gold);
-            font-size: 0.7rem;
+            font-size: 0.8rem;
         }
         
-        /* Category badges */
-        .category-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--primary-gold);
-            color: var(--dark-charcoal);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+        .project-results {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 1.5rem;
+        }
+        
+        .project-results h4 {
+            color: var(--success-green);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+        
+        .result-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(5, 150, 105, 0.1);
+            border-radius: 10px;
+        }
+        
+        .result-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--success-green);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-label {
+            color: var(--light-charcoal);
             font-size: 0.8rem;
-            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            z-index: 2;
         }
         
-        /* Stats Section */
-        .stats-section {
+        /* Case Study Section */
+        .case-study {
             padding: 6rem 0;
             background: var(--dark-charcoal);
             color: white;
         }
         
-        .stats-grid {
+        .case-study-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            text-align: center;
-        }
-        
-        .stat-item {
-            padding: 2rem;
-        }
-        
-        .stat-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-gold);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .stat-description {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            margin-top: 0.5rem;
-        }
-        
-        /* Lightbox Modal */
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
             align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            padding: 2rem;
         }
         
-        .lightbox.active {
-            display: flex;
+        .case-study-text h2 {
+            color: white;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
         }
         
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 90%;
+        .case-study-text p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .case-study-highlights {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .case-study-highlights li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
             position: relative;
-            background: white;
+            padding-left: 2rem;
+        }
+        
+        .case-study-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .case-study-image {
+            position: relative;
             border-radius: 20px;
             overflow: hidden;
         }
         
-        .lightbox-image {
+        .case-study-image img {
             width: 100%;
-            height: auto;
-            max-height: 70vh;
+            height: 400px;
             object-fit: cover;
         }
         
-        .lightbox-info {
-            padding: 2rem;
-        }
-        
-        .lightbox-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 40px;
-            height: 40px;
-            background: rgba(0, 0, 0, 0.7);
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--accent-blue), var(--primary-gold));
             color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
+            text-align: center;
         }
         
-        .lightbox-close:hover {
-            background: var(--primary-gold);
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            padding: 18px 36px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-white {
+            background: white;
             color: var(--dark-charcoal);
+        }
+        
+        .btn-white:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-charcoal);
+            color: white;
+            padding: 3rem 0 1rem;
+            text-align: center;
+            border-top: 3px solid var(--primary-gold);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+        
+        .footer-section a:hover {
+            color: var(--primary-gold);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding-top: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .portfolio-grid {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark-charcoal);
+                padding: 1rem;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+                border-top: 1px solid var(--primary-gold);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 0.5rem 0;
+            }
+            
+            .nav-menu a {
+                padding: 1rem;
+                display: block;
+                text-align: center;
+                border-radius: 8px;
+            }
+            
+            .projects-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -498,6 +580,11 @@
             .filter-buttons {
                 flex-direction: column;
                 align-items: center;
+            }
+            
+            .case-study-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
         
@@ -542,8 +629,10 @@
                     <li><a href="index.html#about">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
+                <button class="mobile-menu-toggle">☰</button>
             </nav>
         </div>
     </header>
@@ -551,8 +640,8 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Our Projects</h1>
-            <p>Showcase of our expertise in reactive metal fabrication and chemical processing equipment for industry leaders like Albemarle</p>
+            <h1>Project Portfolio</h1>
+            <p>Explore our comprehensive collection of reactive metal fabrication and inspection projects showcasing our expertise across various industries</p>
         </div>
     </section>
 
@@ -560,305 +649,470 @@
     <section class="filter-section">
         <div class="container">
             <h2 style="color: #2C2C2C; margin-bottom: 1rem;">Project Categories</h2>
-            <p style="color: #4A4A4A;">Filter our portfolio by project type and material specialization</p>
+            <p style="color: #4A4A4A;">Filter our portfolio by material type and project category</p>
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="titanium">Titanium Systems</button>
-                <button class="filter-btn" data-filter="zirconium">Zirconium Applications</button>
-                <button class="filter-btn" data-filter="tantalum">Tantalum Solutions</button>
-                <button class="filter-btn" data-filter="lithium">Lithium Processing</button>
-                <button class="filter-btn" data-filter="inspection">Inspection Services</button>
+                <button class="filter-btn" data-filter="titanium">Titanium</button>
+                <button class="filter-btn" data-filter="zirconium">Zirconium</button>
+                <button class="filter-btn" data-filter="tantalum">Tantalum</button>
+                <button class="filter-btn" data-filter="inspection">Inspection</button>
+                <button class="filter-btn" data-filter="fabrication">Fabrication</button>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Grid -->
-    <section class="portfolio">
+    <!-- Projects Grid -->
+    <section class="projects-section">
         <div class="container">
-            <div class="portfolio-grid">
+            <div class="projects-grid">
                 <!-- Project 1: Albemarle Lithium Processing Tank -->
-                <div class="project-card fade-in" data-category="lithium titanium">
+                <div class="project-card fade-in" data-category="titanium fabrication">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1581092335878-4c5e6b23e329?w=600&h=400&fit=crop" alt="Albemarle Lithium Processing Tank - Titanium Fabrication" loading="lazy">
-                        <div class="category-badge">Lithium Processing</div>
-                        <div class="project-overlay">
-                            <div class="overlay-content">
-                                <h3>Albemarle Lithium Processing Tank</h3>
-                                <p>Custom titanium fabrication for lithium hydroxide processing at Albemarle's Kemerton facility. Designed for extreme chemical resistance and high-purity applications.</p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Titanium</span>
-                                    <span class="project-tag">Lithium Processing</span>
-                                    <span class="project-tag">High Purity</span>
-                                </div>
-                            </div>
-                        </div>
+                        <img src="images/ftg-albemarle-titanium-tank.jpg" alt="Albemarle Lithium Processing Tank" loading="lazy">
+                        <div class="project-badge">Titanium</div>
                     </div>
                     <div class="project-content">
-                        <h3>Albemarle Lithium Processing Tank</h3>
                         <div class="project-meta">
                             <div class="meta-item">
-                                <div class="meta-icon">📍</div>
-                                <span>Charlotte, North Carolina</span>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-icon">🏢</div>
-                                <span>Specialty Chemical Client</span>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-icon">⚛</div>
-                                <span>Tantalum</span>
-                            </div>
-                        </div>
-                        <p class="project-description">
-                            Precision-engineered tantalum reactor vessel for pharmaceutical-grade chemical synthesis. Designed to meet FDA requirements and withstand the most aggressive chemical environments.
-                        </p>
-                        <ul class="project-features">
-                            <li>99.95% pure tantalum construction</li>
-                            <li>FDA-compliant design</li>
-                            <li>Ultra-smooth surface finish</li>
-                            <li>Integrated mixing system</li>
-                            <li>Temperature and pressure monitoring</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Project 4: Fiberglass Tank Inspection -->
-                <div class="project-card fade-in" data-category="inspection">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1581092335878-4c5e6b23e329?w=600&h=400&fit=crop" alt="Comprehensive Fiberglass Tank Inspection Services" loading="lazy">
-                        <div class="category-badge">Inspection Services</div>
-                        <div class="project-overlay">
-                            <div class="overlay-content">
-                                <h3>Comprehensive Tank Inspection</h3>
-                                <p>Complete inspection and certification of large-scale chemical storage tanks including NDT testing, structural analysis, and compliance verification.</p>
-                                <div class="project-tags">
-                                    <span class="project-tag">NDT Testing</span>
-                                    <span class="project-tag">ASME Compliance</span>
-                                    <span class="project-tag">Safety Certification</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Comprehensive Tank Inspection</h3>
-                        <div class="project-meta">
-                            <div class="meta-item">
-                                <div class="meta-icon">📍</div>
-                                <span>Multiple Locations</span>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-icon">🏢</div>
-                                <span>Various Chemical Companies</span>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-icon">🔍</div>
-                                <span>Multi-Material</span>
-                            </div>
-                        </div>
-                        <p class="project-description">
-                            Comprehensive inspection services for chemical processing equipment including visual inspection, non-destructive testing, and structural integrity assessment.
-                        </p>
-                        <ul class="project-features">
-                            <li>Visual and NDT inspection</li>
-                            <li>Structural integrity assessment</li>
-                            <li>Compliance documentation</li>
-                            <li>Safety recommendations</li>
-                            <li>Maintenance planning</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Project 5: Titanium Piping System -->
-                <div class="project-card fade-in" data-category="titanium lithium">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1565098772267-60af42b81ef2?w=600&h=400&fit=crop" alt="Titanium Piping System for Lithium Processing" loading="lazy">
-                        <div class="category-badge">Titanium Piping</div>
-                        <div class="project-overlay">
-                            <div class="overlay-content">
-                                <h3>Titanium Piping Network</h3>
-                                <p>Extensive titanium piping system for lithium processing facility with custom fittings, valves, and monitoring systems for optimal performance.</p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Titanium</span>
-                                    <span class="project-tag">Process Piping</span>
-                                    <span class="project-tag">Custom Fittings</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Titanium Piping Network</h3>
-                        <div class="project-meta">
-                            <div class="meta-item">
-                                <div class="meta-icon">📍</div>
-                                <span>Kings Mountain, NC</span>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-icon">🏢</div>
+                                <div class="meta-icon">🏭</div>
                                 <span>Albemarle Corporation</span>
                             </div>
                             <div class="meta-item">
-                                <div class="meta-icon">⚛</div>
-                                <span>Titanium Grade 2</span>
+                                <div class="meta-icon">📅</div>
+                                <span>2023</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">⚛️</div>
+                                <span>Ti Grade 2</span>
                             </div>
                         </div>
+                        <h3>Lithium Processing Storage Tank</h3>
                         <p class="project-description">
-                            Complex titanium piping network designed for the new lithium processing facility at Kings Mountain, featuring advanced welding techniques and precision fabrication.
+                            Custom-designed 15,000-gallon titanium storage tank for lithium carbonate processing. 
+                            Features specialized internal baffles and advanced corrosion-resistant coating systems 
+                            for extreme chemical environments.
                         </p>
-                        <ul class="project-features">
-                            <li>500+ feet of titanium piping</li>
-                            <li>Custom valve assemblies</li>
-                            <li>Precision orbital welding</li>
-                            <li>Integrated monitoring systems</li>
-                            <li>Seismic-resistant design</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Project 6: Zirconium Storage Tank -->
-                <div class="project-card fade-in" data-category="zirconium inspection">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop" alt="Zirconium Storage Tank for Chemical Processing" loading="lazy">
-                        <div class="category-badge">Zirconium Storage</div>
-                        <div class="project-overlay">
-                            <div class="overlay-content">
-                                <h3>Zirconium Storage Tank</h3>
-                                <p>Large-capacity zirconium storage tank for aggressive chemical environments with advanced corrosion protection and monitoring systems.</p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Zirconium</span>
-                                    <span class="project-tag">Large Capacity</span>
-                                    <span class="project-tag">Corrosion Protection</span>
+                        <div class="project-specs">
+                            <h4>Technical Specifications</h4>
+                            <ul class="specs-list">
+                                <li>15,000 gallon capacity</li>
+                                <li>Grade 2 titanium construction</li>
+                                <li>ASME VIII Div 1 certified</li>
+                                <li>Operating temp: 200°F</li>
+                                <li>Internal baffle system</li>
+                                <li>Corrosion monitoring ports</li>
+                            </ul>
+                        </div>
+                        <div class="project-results">
+                            <h4>Project Results</h4>
+                            <div class="results-grid">
+                                <div class="result-item">
+                                    <span class="result-number">100%</span>
+                                    <div class="result-label">On Schedule</div>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">0</span>
+                                    <div class="result-label">Defects</div>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">5</span>
+                                    <div class="result-label">Year Warranty</div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Project 2: Zirconium Heat Exchanger -->
+                <div class="project-card fade-in" data-category="zirconium fabrication">
+                    <div class="project-image">
+                        <img src="images/ftg-zirconium-heat-exchanger.jpg" alt="Zirconium Heat Exchanger System" loading="lazy">
+                        <div class="project-badge">Zirconium</div>
+                    </div>
                     <div class="project-content">
-                        <h3>Zirconium Storage Tank</h3>
                         <div class="project-meta">
                             <div class="meta-item">
-                                <div class="meta-icon">📍</div>
-                                <span>Industrial Facility</span>
+                                <div class="meta-icon">🏭</div>
+                                <span>Chemical Processing Facility</span>
                             </div>
                             <div class="meta-item">
-                                <div class="meta-icon">🏢</div>
-                                <span>Chemical Processing Company</span>
+                                <div class="meta-icon">📅</div>
+                                <span>2024</span>
                             </div>
                             <div class="meta-item">
-                                <div class="meta-icon">⚛</div>
-                                <span>Zirconium 705</span>
+                                <div class="meta-icon">⚛️</div>
+                                <span>Zr-702</span>
                             </div>
                         </div>
+                        <h3>Zirconium Heat Exchanger System</h3>
                         <p class="project-description">
-                            High-capacity zirconium storage tank engineered for long-term chemical storage with superior corrosion resistance and advanced safety features.
+                            High-efficiency shell-and-tube heat exchanger fabricated from Zr-702 for handling 
+                            highly corrosive chemical streams. Custom-designed tube bundle with specialized 
+                            welding techniques for maximum heat transfer efficiency.
                         </p>
-                        <ul class="project-features">
-                            <li>100,000L storage capacity</li>
-                            <li>Zirconium 705 construction</li>
-                            <li>Advanced leak detection</li>
-                            <li>Secondary containment</li>
-                            <li>Remote monitoring capability</li>
-                        </ul>
+                        <div class="project-specs">
+                            <h4>Technical Specifications</h4>
+                            <ul class="specs-list">
+                                <li>2.5 million BTU/hr capacity</li>
+                                <li>Zr-702 construction</li>
+                                <li>Shell-and-tube design</li>
+                                <li>Operating pressure: 150 PSI</li>
+                                <li>Custom tube bundle</li>
+                                <li>Advanced welding techniques</li>
+                            </ul>
+                        </div>
+                        <div class="project-results">
+                            <h4>Project Results</h4>
+                            <div class="results-grid">
+                                <div class="result-item">
+                                    <span class="result-number">98%</span>
+                                    <div class="result-label">Efficiency</div>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">15%</span>
+                                    <div class="result-label">Energy Savings</div>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">20</span>
+                                    <div class="result-label">Year Lifespan</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Tantalum Reactor Vessel -->
+                <div class="project-card fade-in" data-category="tantalum fabrication">
+                    <div class="project-image">
+                        <img src="images/ftg-tantalum-reactor.jpg" alt="Tantalum Reactor Vessel" loading="lazy">
+                        <div class="project-badge">Tantalum</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">🏭</div>
+                                <span>Pharmaceutical Manufacturing</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">📅</div>
+                                <span>2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">⚛️</div>
+                                <span>Ta-RW05</span>
+                            </div>
+                        </div>
+                        <h3>Tantalum Chemical Reactor</h3>
+                        <p class="project-description">
+                            Precision-engineered tantalum reactor vessel for pharmaceutical intermediate 
+                            production. Features advanced mixing systems and temperature control for 
+                            critical chemical synthesis processes requiring absolute purity.
+                        </p>
+                        <div class="project-specs">
+                            <h4>Technical Specifications</h4>
+                            <ul class="specs-list">
+                                <li>500 gallon capacity</li>
+                                <li>Ta-RW05 construction</li>
+                                <li>Advanced mixing system</li>
+                                <li>Temperature control ±1°C</li>
+                                <li>Pharmaceutical grade</li>
+                                <li>Precision welding</li>
+                            </ul>
+                        </div>
+                        <div class="project-results">
+                            <h4>Project Results</h4>
+                            <div class="results-grid">
+                                <div class="result-item">
+                                    <span class="result-number">99.9%</span>
+                                    <div class="result-label">Purity Level</div>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">100%</span>
+                                    <div class="result-label">FDA Compliance</div>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">25</span>
+                                    <div class="result-label">Year Lifespan</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Comprehensive Tank Inspection -->
+                <div class="project-card fade-in" data-category="inspection titanium">
+                    <div class="project-image">
+                        <img src="images/ftg-tank-inspection-service.jpg" alt="Comprehensive Tank Inspection" loading="lazy">
+                        <div class="project-badge">Inspection</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">🔍</div>
+                                <span>Multi-facility Inspection</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">📅</div>
+                                <span>2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">📋</div>
+                                <span>NDT Methods</span>
+                            </div>
+                        </div>
+                        <h3>Annual Tank Inspection Program</h3>
+                        <p class="project-description">
+                            Comprehensive inspection of 45 reactive metal tanks across multiple facilities. 
+                            Utilized advanced NDT methods including ultrasonic testing, radiographic examination, 
+                            and visual inspection to ensure continued safe operation.
+                        </p>
+                        <div class="project-specs">
+                            <h4>Inspection Scope</h4>
+                            <ul class="specs-list">
+                                <li>45 tanks inspected</li>
+                                <li>Ultrasonic testing</li>
+                                <li>Radiographic examination</li>
+                                <li>Visual inspection</li>
+                                <li>Compliance verification</li>
+                                <li>Detailed reporting</li>
+                            </ul>
+                        </div>
+                        <div class="project-results">
+                            <h4>Inspection Results</h4>
+                            <div class="results-grid">
+                                <div class="result-item">
+                                    <span class="result-number">45</span>
+                                    <div class="result-label">Tanks Certified</div>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">100%</span>
+                                    <div class="result-label">Compliance Rate</div>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">0</span>
+                                    <div class="result-label">Safety Issues</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Emergency Repair Service -->
+                <div class="project-card fade-in" data-category="inspection fabrication">
+                    <div class="project-image">
+                        <img src="images/ftg-emergency-repair.jpg" alt="Emergency Repair Service" loading="lazy">
+                        <div class="project-badge">Emergency</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">⚡</div>
+                                <span>Emergency Response</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">📅</div>
+                                <span>2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">🔧</div>
+                                <span>24/7 Service</span>
+                            </div>
+                        </div>
+                        <h3>Emergency Vessel Repair</h3>
+                        <p class="project-description">
+                            Rapid response emergency repair of critical titanium pressure vessel experiencing 
+                            unexpected corrosion. Completed emergency assessment, temporary repairs, and 
+                            permanent solution within 48 hours to minimize production downtime.
+                        </p>
+                        <div class="project-specs">
+                            <h4>Service Details</h4>
+                            <ul class="specs-list">
+                                <li>48-hour response</li>
+                                <li>Emergency assessment</li>
+                                <li>Temporary repairs</li>
+                                <li>Permanent solution</li>
+                                <li>Minimal downtime</li>
+                                <li>24/7 support</li>
+                            </ul>
+                        </div>
+                        <div class="project-results">
+                            <h4>Service Results</h4>
+                            <div class="results-grid">
+                                <div class="result-item">
+                                    <span class="result-number">48</span>
+                                    <div class="result-label">Hours Response</div>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">95%</span>
+                                    <div class="result-label">Downtime Saved</div>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">100%</span>
+                                    <div class="result-label">Issue Resolved</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Multi-Material Piping System -->
+                <div class="project-card fade-in" data-category="titanium zirconium fabrication">
+                    <div class="project-image">
+                        <img src="images/ftg-piping-system.jpg" alt="Multi-Material Piping System" loading="lazy">
+                        <div class="project-badge">Complex</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">🔧</div>
+                                <span>Process Piping</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">📅</div>
+                                <span>2023-2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">⚛️</div>
+                                <span>Ti + Zr</span>
+                            </div>
+                        </div>
+                        <h3>Complex Piping Installation</h3>
+                        <p class="project-description">
+                            Comprehensive piping system combining titanium and zirconium components for 
+                            multi-stage chemical processing. Features specialized transition joints and 
+                            advanced flow control systems across 500 feet of process piping.
+                        </p>
+                        <div class="project-specs">
+                            <h4>System Specifications</h4>
+                            <ul class="specs-list">
+                                <li>500 feet of piping</li>
+                                <li>Ti and Zr materials</li>
+                                <li>Transition joints</li>
+                                <li>Flow control systems</li>
+                                <li>Multi-stage processing</li>
+                                <li>Custom fittings</li>
+                            </ul>
+                        </div>
+                        <div class="project-results">
+                            <h4>Installation Results</h4>
+                            <div class="results-grid">
+                                <div class="result-item">
+                                    <span class="result-number">500</span>
+                                    <div class="result-label">Feet Installed</div>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">100%</span>
+                                    <div class="result-label">Pressure Tests</div>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">0</span>
+                                    <div class="result-label">Leaks Detected</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
+    <!-- Case Study Section -->
+    <section class="case-study">
         <div class="container">
-            <div class="section-header fade-in" style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="font-size: 2.5rem; color: white; margin-bottom: 1rem;">Project Statistics</h2>
-                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8);">Our track record of excellence in reactive metal fabrication</p>
-            </div>
-            
-            <div class="stats-grid">
-                <div class="stat-item fade-in">
-                    <span class="stat-number">500+</span>
-                    <div class="stat-label">Projects Completed</div>
-                    <div class="stat-description">Across multiple industries and applications</div>
+            <div class="case-study-content fade-in">
+                <div class="case-study-text">
+                    <h2>Case Study: 10+ Years with Albemarle Corporation</h2>
+                    <p>
+                        Our longest-standing partnership demonstrates the value of expertise and reliability 
+                        in reactive metal fabrication. Over the past decade, we've completed more than 150 
+                        projects for Albemarle Corporation, ranging from emergency repairs to large-scale 
+                        equipment installations.
+                    </p>
+                    <p>
+                        This partnership has involved some of the most challenging applications in lithium 
+                        processing, where equipment failure is not an option. Our consistent performance 
+                        has established FTG as Albemarle's go-to partner for critical reactive metal systems.
+                    </p>
+                    <ul class="case-study-highlights">
+                        <li>150+ successful projects completed</li>
+                        <li>99.9% on-time delivery rate</li>
+                        <li>Zero safety incidents across all projects</li>
+                        <li>24/7 emergency support maintained</li>
+                        <li>Continuous process optimization collaboration</li>
+                        <li>Advanced material research partnership</li>
+                    </ul>
                 </div>
-                
-                <div class="stat-item fade-in">
-                    <span class="stat-number">10+</span>
-                    <div class="stat-label">Years with Albemarle</div>
-                    <div class="stat-description">Trusted partnership in lithium processing</div>
-                </div>
-                
-                <div class="stat-item fade-in">
-                    <span class="stat-number">99.9%</span>
-                    <div class="stat-label">Success Rate</div>
-                    <div class="stat-description">Consistent quality and performance</div>
-                </div>
-                
-                <div class="stat-item fade-in">
-                    <span class="stat-number">25+</span>
-                    <div class="stat-label">Countries Served</div>
-                    <div class="stat-description">Global reach and expertise</div>
-                </div>
-                
-                <div class="stat-item fade-in">
-                    <span class="stat-number">50M+</span>
-                    <div class="stat-label">Dollars in Projects</div>
-                    <div class="stat-description">High-value engineering solutions</div>
-                </div>
-                
-                <div class="stat-item fade-in">
-                    <span class="stat-number">24/7</span>
-                    <div class="stat-label">Emergency Support</div>
-                    <div class="stat-description">Always available for critical needs</div>
+                <div class="case-study-image">
+                    <img src="images/ftg-albemarle-partnership.jpg" alt="FTG Albemarle Partnership" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Lightbox Modal -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-        <div class="lightbox-content">
-            <img class="lightbox-image" id="lightboxImage" src="" alt="">
-            <div class="lightbox-info">
-                <h3 id="lightboxTitle"></h3>
-                <p id="lightboxDescription"></p>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Ready to Start Your Next Project?</h2>
+                <p>Join our growing list of satisfied clients who trust FTG for their most critical reactive metal fabrication and inspection needs.</p>
+                <a href="mailto:fibtechgroup@gmail.com?subject=FTG%20Project%20Inquiry&body=Hello%20Matthew%2C%0A%0AI%20am%20interested%20in%20discussing%20a%20potential%20project%20with%20FTG.%0A%0AProject%20Details%3A%0A-%20Project%20type%3A%20%0A-%20Materials%20required%3A%20%0A-%20Timeline%3A%20%0A-%20Special%20requirements%3A%20%0A%0APlease%20contact%20me%20to%20schedule%20a%20consultation.%0A%0AThank%20you%2C%0A%5BYour%20Name%5D%0A%5BCompany%5D%0A%5BPhone%5D" class="btn btn-white">Start Your Project Today</a>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="footer" style="background: #2C2C2C; color: white; padding: 3rem 0 1rem; text-align: center; border-top: 3px solid #D4AF37;">
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+            <div class="footer-content">
                 <div class="footer-section">
-                    <h4 style="color: #D4AF37; margin-bottom: 1rem;">Fiberglass Technical Group</h4>
-                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">Leading specialists in reactive metal fabrication design, consultation, and inspection services for the chemical processing industry.</p>
+                    <h4>Fiberglass Technical Group</h4>
+                    <p>Leading specialists in reactive metal fabrication design, consultation, and inspection services for the chemical processing industry.</p>
                 </div>
                 <div class="footer-section">
-                    <h4 style="color: #D4AF37; margin-bottom: 1rem;">Project Types</h4>
-                    <p style="color: rgba(255,255,255,0.8);">Titanium Systems</p>
-                    <p style="color: rgba(255,255,255,0.8);">Zirconium Applications</p>
-                    <p style="color: rgba(255,255,255,0.8);">Tantalum Solutions</p>
-                    <p style="color: rgba(255,255,255,0.8);">Lithium Processing Equipment</p>
+                    <h4>Project Types</h4>
+                    <p><a href="#projects">Titanium Fabrication</a></p>
+                    <p><a href="#projects">Zirconium Systems</a></p>
+                    <p><a href="#projects">Tantalum Applications</a></p>
+                    <p><a href="#projects">Inspection Services</a></p>
                 </div>
                 <div class="footer-section">
-                    <h4 style="color: #D4AF37; margin-bottom: 1rem;">Industries</h4>
-                    <p style="color: rgba(255,255,255,0.8);">Chemical Processing</p>
-                    <p style="color: rgba(255,255,255,0.8);">Lithium Production</p>
-                    <p style="color: rgba(255,255,255,0.8);">Pharmaceutical Manufacturing</p>
-                    <p style="color: rgba(255,255,255,0.8);">Specialty Chemicals</p>
+                    <h4>Industries Served</h4>
+                    <p>Chemical Processing</p>
+                    <p>Lithium Production</p>
+                    <p>Pharmaceutical Manufacturing</p>
+                    <p>Specialty Chemicals</p>
                 </div>
                 <div class="footer-section">
-                    <h4 style="color: #D4AF37; margin-bottom: 1rem;">Contact</h4>
-                    <p style="color: rgba(255,255,255,0.8);">Email: info@fiberglasstechnicalgroup.com</p>
-                    <p style="color: rgba(255,255,255,0.8);">Worldwide Service Available</p>
-                    <p style="color: rgba(255,255,255,0.8);">24/7 Emergency Support</p>
+                    <h4>Contact</h4>
+                    <p>Matthew McCoy</p>
+                    <p>P.O. Box 78041</p>
+                    <p>Baton Rouge, LA 70837</p>
+                    <p>Phone: (225) 571-4899</p>
+                    <p>Email: fibtechgroup@gmail.com</p>
+                    <p>24/7 Emergency Support</p>
                 </div>
             </div>
-            <div class="footer-bottom" style="border-top: 1px solid rgba(212,175,55,0.3); padding-top: 1rem; color: rgba(255,255,255,0.6); font-size: 0.9rem;">
+            <div class="footer-bottom">
                 <p>&copy; 2025 Fiberglass Technical Group. All rights reserved. | Expert Reactive Metal Fabrication Services</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+            this.textContent = this.textContent === '☰' ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+                document.querySelector('.mobile-menu-toggle').textContent = '☰';
+            });
+        });
+
         // Filter functionality
         const filterButtons = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
@@ -885,41 +1139,6 @@
                     }
                 });
             });
-        });
-
-        // Lightbox functionality
-        function openLightbox(imageSrc, title, description) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImage = document.getElementById('lightboxImage');
-            const lightboxTitle = document.getElementById('lightboxTitle');
-            const lightboxDescription = document.getElementById('lightboxDescription');
-
-            lightboxImage.src = imageSrc;
-            lightboxTitle.textContent = title;
-            lightboxDescription.textContent = description;
-            lightbox.classList.add('active');
-        }
-
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('active');
-        }
-
-        // Add click events to project cards
-        projectCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const image = card.querySelector('img');
-                const title = card.querySelector('.project-content h3').textContent;
-                const description = card.querySelector('.project-description').textContent;
-                openLightbox(image.src, title, description);
-            });
-        });
-
-        // Close lightbox on background click
-        document.getElementById('lightbox').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) {
-                closeLightbox();
-            }
         });
 
         // Scroll animations
@@ -952,99 +1171,8 @@
             }
         });
 
-        console.log('📂 FTG Projects Portfolio Loaded Successfully');
+        console.log('📋 FTG Projects Portfolio Loaded Successfully');
+        console.log('🏗️ Interactive Project Filter System Active');
     </script>
 </body>
-</html>                <span>Kemerton, Australia</span>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-icon">🏢</div>
-                                <span>Albemarle Corporation</span>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-icon">⚛</div>
-                                <span>Titanium Grade 2</span>
-                            </div>
-                        </div>
-                        <p class="project-description">
-                            Advanced titanium tank system designed for lithium hydroxide processing with exceptional chemical resistance and purity requirements. Features custom heating coils and precision temperature control.
-                        </p>
-                        <ul class="project-features">
-                            <li>50,000L capacity titanium vessel</li>
-                            <li>ASME Section VIII compliance</li>
-                            <li>Integrated heating system</li>
-                            <li>High-purity surface finish</li>
-                            <li>Emergency pressure relief systems</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Project 2: Zirconium Heat Exchanger -->
-                <div class="project-card fade-in" data-category="zirconium lithium">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1565098772267-60af42b81ef2?w=600&h=400&fit=crop" alt="Zirconium Heat Exchanger for Chemical Processing" loading="lazy">
-                        <div class="category-badge">Zirconium Systems</div>
-                        <div class="project-overlay">
-                            <div class="overlay-content">
-                                <h3>Zirconium Heat Exchanger System</h3>
-                                <p>High-efficiency heat exchanger fabricated from Zirconium 702 for aggressive chemical environments in lithium brine processing operations.</p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Zirconium 702</span>
-                                    <span class="project-tag">Heat Transfer</span>
-                                    <span class="project-tag">Chemical Resistance</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Zirconium Heat Exchanger System</h3>
-                        <div class="project-meta">
-                            <div class="meta-item">
-                                <div class="meta-icon">📍</div>
-                                <span>Silver Peak, Nevada</span>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-icon">🏢</div>
-                                <span>Albemarle Corporation</span>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-icon">⚛</div>
-                                <span>Zirconium 702</span>
-                            </div>
-                        </div>
-                        <p class="project-description">
-                            Custom-designed shell and tube heat exchanger system for lithium brine concentration operations. Engineered to withstand high salinity and temperature cycling.
-                        </p>
-                        <ul class="project-features">
-                            <li>Zirconium 702 construction</li>
-                            <li>Shell and tube design</li>
-                            <li>Corrosion-resistant coating</li>
-                            <li>High thermal efficiency</li>
-                            <li>Maintenance-friendly design</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Project 3: Tantalum Reactor Vessel -->
-                <div class="project-card fade-in" data-category="tantalum">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop" alt="Tantalum Reactor Vessel for Extreme Chemical Processing" loading="lazy">
-                        <div class="category-badge">Tantalum Solutions</div>
-                        <div class="project-overlay">
-                            <div class="overlay-content">
-                                <h3>Tantalum Reactor Vessel</h3>
-                                <p>Ultra-pure tantalum reactor for specialty chemical processing under extreme corrosive conditions. Designed for pharmaceutical-grade applications.</p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Tantalum</span>
-                                    <span class="project-tag">Pharmaceutical</span>
-                                    <span class="project-tag">Ultra-Pure</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Tantalum Reactor Vessel</h3>
-                        <div class="project-meta">
-                            <div class="meta-item">
-                                <div class="meta-icon">📍</div>
-                
+</html>

@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Fiberglass Technical Group - Project Images & Equipment Photos</title>
+    <meta name="description" content="Explore our gallery of reactive metal fabrication projects, equipment photos, and facility images showcasing our expertise in titanium, zirconium, and tantalum systems.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-charcoal: #2C2C2C;
+            --light-charcoal: #4A4A4A;
+            --warm-white: #FAFAFA;
+            --accent-blue: #1E3A8A;
+            --success-green: #059669;
+            --reactive-titanium: #C0C0C0;
+            --reactive-zirconium: #A8B5B8;
+            --reactive-tantalum: #73716E;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-charcoal);
+            background: var(--warm-white);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+        
+        /* Header - Same as other pages */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(44, 44, 44, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .logo-symbol {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-gold), #F4E04D);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.1;
+        }
+        
+        .logo-sub {
+            font-size: 0.75rem;
+            color: var(--primary-gold);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+        
+        .nav-menu a:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .nav-menu a.active {
+            background: var(--primary-gold);
+            color: var(--dark-charcoal);
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--dark-charcoal), var(--light-charcoal));
+            color: white;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--primary-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Gallery Filter */
+        .gallery-filter {
+            padding: 3rem 0;
+            background: var(--warm-white);
+            text-align: center;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--primary-gold);
+            background: transparent;
+            color: var(--dark-charcoal);
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-gold);
+            color: var(--dark-charcoal);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        /* Gallery Grid */
+        .gallery-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f8f9fa, var(--warm-white));
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-image {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+        
+        .gallery-item:hover .gallery-image img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(44, 44, 44, 0.9), rgba(212, 175, 55, 0.8));
+            opacity: 0;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .overlay-content {
+            text-align: center;
+            color: white;
+            transform: translateY(20px);
+            transition: all 0.4s ease 0.1s;
+        }
+        
+        .gallery-item:hover .overlay-content {
+            transform: translateY(0);
+        }
+        
+        .overlay-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .overlay-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .view-btn {
+            background: var(--primary-gold);
+            color: var(--dark-charcoal);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .view-btn:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+        
+        .gallery-info {
+            padding: 2rem;
+        }
+        
+        .gallery-info h3 {
+            color: var(--dark-charcoal);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .gallery-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--light-charcoal);
+            font-size: 0.9rem;
+        }
+        
+        .meta-icon {
+            width: 20px;
+            height: 20px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-charcoal);
+            font-size: 0.7rem;
+        }
+        
+        .gallery-description {
+            color: var(--light-charcoal);
+            line-height: 1.6;
+        }
+        
+        /* Category badges */
+        .category-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-gold);
+            color: var(--dark-charcoal);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+        
+        /* Lightbox Modal */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            padding: 2rem;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .lightbox-image {
+            width: 100%;
+            height: 70vh;
+            object-fit: cover;
+        }
+        
+        .lightbox-info {
+            padding: 2rem;
+            flex: 1;
+        }
+        
+        .lightbox-info h3 {
+            color: var(--dark-charcoal);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .lightbox-info p {
+            color: var(--light-charcoal);
+            line-height: 1.6;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        
+        .lightbox-close:hover {
+            background: var(--primary-gold);
+            color: var(--dark-charcoal);
+            transform: scale(1.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark-charcoal);
+                padding: 1rem;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+                border-top: 1px solid var(--primary-gold);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 0.5rem 0;
+            }
+            
+            .nav-menu a {
+                padding: 1rem;
+                display: block;
+                text-align: center;
+                border-radius: 8px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .lightbox-content {
+                max-width: 95%;
+                max-height: 95%;
+            }
+            
+            .lightbox-image {
+                height: 50vh;
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo-container">
+                <div class="logo-symbol">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M12 20h16M20 12v16" stroke="currentColor" stroke-width="3"/>
+                        <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.3"/>
+                        <circle cx="16" cy="16" r="2" fill="currentColor"/>
+                        <circle cx="24" cy="24" r="2" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <div class="logo-main">FIBERGLASS TECHNICAL GROUP</div>
+                    <div class="logo-sub">Reactive Metal Specialists</div>
+                </div>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Project Gallery</h1>
+            <p>Explore our comprehensive collection of reactive metal fabrication projects, equipment photos, and facility images showcasing our expertise</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="gallery-filter">
+        <div class="container">
+            <h2 style="color: #2C2C2C; margin-bottom: 1rem;">Gallery Categories</h2>
+            <p style="color: #4A4A4A;">Filter our image collection by project type and equipment category</p>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Images</button>
+                <button class="filter-btn" data-filter="fabrication">Fabrication</button>
+                <button class="filter-btn" data-filter="inspection">Inspection</button>
+                <button class="filter-btn" data-filter="equipment">Equipment</button>
+                <button class="filter-btn" data-filter="facility">Facility</button>
+                <button class="filter-btn" data-filter="materials">Materials</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 - Corrosion Sample Testing -->
+                <div class="gallery-item fade-in" data-category="materials inspection">
+                    <div class="gallery-image">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3M=" alt="FTG Corrosion Sample Testing - Structure Analysis" loading="lazy">
+                        <div class="category-badge">Materials Testing</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Corrosion Sample Testing</h3>
+                                <p>Advanced materials testing for corrosion barrier analysis. Sample structure examination dated Dec 2023 showing FTG's comprehensive testing protocols for reactive metal performance.</p>
+                                <button class="view-btn">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Corrosion Sample Testing</h3>
+                        <div class="gallery-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">🔬</div>
+                                <span>Materials Analysis</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">📊</div>
+                                <span>Performance Testing</span>
+                            </div>
+                        </div>
+                        <p class="gallery-description">
+                            Comprehensive corrosion testing and barrier analysis for reactive metal structures, ensuring optimal performance in chemical processing environments.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 - Precision Metal Machining -->
+                <div class="gallery-item fade-in" data-category="fabrication materials">
+                    <div class="gallery-image">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3M=" alt="FTG Precision Metal Machining - Reactive Metal Fabrication" loading="lazy">
+                        <div class="category-badge">Fabrication</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Precision Metal Machining</h3>
+                                <p>High-precision machining of reactive metals showing the exceptional surface finish and dimensional accuracy achieved in FTG's fabrication processes.</p>
+                                <button class="view-btn">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Precision Metal Machining</h3>
+                        <div class="gallery-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">⚛</div>
+                                <span>Reactive Metals</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">🔧</div>
+                                <span>Precision Machining</span>
+                            </div>
+                        </div>
+                        <p class="gallery-description">
+                            Expert machining techniques for reactive metals demonstrating our capability to achieve superior surface finishes and tight tolerances.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 - Field Installation -->
+                <div class="gallery-item fade-in" data-category="installation equipment">
+                    <div class="gallery-image">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3M=" alt="FTG Field Installation - Construction Site Work" loading="lazy">
+                        <div class="category-badge">Installation</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Field Installation Services</h3>
+                                <p>On-site installation and construction services for large-scale chemical processing equipment, demonstrating FTG's full-service capabilities from fabrication to installation.</p>
+                                <button class="view-btn">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Field Installation Services</h3>
+                        <div class="gallery-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">🏗️</div>
+                                <span>On-Site Installation</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">👷</div>
+                                <span>Expert Teams</span>
+                            </div>
+                        </div>
+                        <p class="gallery-description">
+                            Professional field installation services with experienced teams handling complex equipment installation and commissioning.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 - Tank Head Fabrication -->
+                <div class="gallery-item fade-in" data-category="fabrication equipment">
+                    <div class="gallery-image">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3M=" alt="FTG Tank Head Fabrication - Pressure Vessel Components" loading="lazy">
+                        <div class="category-badge">Fabrication</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Tank Head Fabrication</h3>
+                                <p>Custom tank head fabrication with precision-drilled ports for chemical processing applications. Shows advanced welding and fabrication techniques.</p>
+                                <button class="view-btn">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Tank Head Fabrication</h3>
+                        <div class="gallery-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">🔧</div>
+                                <span>Custom Fabrication</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">⚙️</div>
+                                <span>Pressure Vessels</span>
+                            </div>
+                        </div>
+                        <p class="gallery-description">
+                            Precision-engineered tank heads with multiple ports and connections, designed for demanding chemical processing applications.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 - Fiberglass Reinforcement -->
+                <div class="gallery-item fade-in" data-category="materials fabrication">
+                    <div class="gallery-image">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3M=" alt="FTG Fiberglass Reinforcement - Advanced Composite Materials" loading="lazy">
+                        <div class="category-badge">Materials</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Fiberglass Reinforcement</h3>
+                                <p>Advanced fiberglass reinforcement application showing our expertise in composite materials and protective systems for chemical processing equipment.</p>
+                                <button class="view-btn">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Fiberglass Reinforcement</h3>
+                        <div class="gallery-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">🧪</div>
+                                <span>Composite Materials</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">🛡️</div>
+                                <span>Protective Systems</span>
+                            </div>
+                        </div>
+                        <p class="gallery-description">
+                            Expert application of fiberglass reinforcement systems providing superior protection and structural integrity for industrial applications.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 - Large Pressure Vessel -->
+                <div class="gallery-item fade-in" data-category="equipment fabrication">
+                    <div class="gallery-image">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3M=" alt="FTG Large Pressure Vessel - Industrial Equipment Manufacturing" loading="lazy">
+                        <div class="category-badge">Equipment</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Large Pressure Vessel</h3>
+                                <p>Massive pressure vessel fabrication showcasing FTG's capability to handle large-scale industrial equipment for chemical processing facilities.</p>
+                                <button class="view-btn">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Large Pressure Vessel</h3>
+                        <div class="gallery-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">🏭</div>
+                                <span>Industrial Scale</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">📏</div>
+                                <span>Large Capacity</span>
+                            </div>
+                        </div>
+                        <p class="gallery-description">
+                            Large-scale pressure vessel fabrication demonstrating our capacity for major industrial projects and complex equipment manufacturing.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 - Manufacturing Facility -->
+                <div class="gallery-item fade-in" data-category="facility equipment">
+                    <div class="gallery-image">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3M=" alt="FTG Manufacturing Facility - Advanced Production Environment" loading="lazy">
+                        <div class="category-badge">Facility</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Manufacturing Facility</h3>
+                                <p>State-of-the-art manufacturing facility with specialized equipment for reactive metal and fiberglass fabrication, showing our advanced production capabilities.</p>
+                                <button class="view-btn">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Manufacturing Facility</h3>
+                        <div class="gallery-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">🏭</div>
+                                <span>Advanced Facility</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">⚡</div>
+                                <span>Modern Equipment</span>
+                            </div>
+                        </div>
+                        <p class="gallery-description">
+                            Modern manufacturing facility equipped with specialized tools and equipment for precision fabrication of reactive metals and composite materials.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 - Fiberglass Tank Inspection -->
+                <div class="gallery-item fade-in" data-category="inspection">
+                    <div class="gallery-image">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3M=" alt="FTG Tank Inspection Services - Professional Assessment" loading="lazy">
+                        <div class="category-badge">Inspection</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Professional Tank Inspection</h3>
+                                <p>Comprehensive tank inspection services showing detailed examination of large-scale chemical processing equipment for safety and compliance verification.</p>
+                                <button class="view-btn">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Professional Tank Inspection</h3>
+                        <div class="gallery-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">🔍</div>
+                                <span>Detailed Inspection</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">✅</div>
+                                <span>Safety Compliance</span>
+                            </div>
+                        </div>
+                        <p class="gallery-description">
+                            Professional inspection services with thorough examination protocols ensuring equipment safety and regulatory compliance for chemical processing facilities.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9 - Piping Systems -->
+                <div class="gallery-item fade-in" data-category="equipment fabrication">
+                    <div class="gallery-image">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3M=" alt="FTG Piping Systems - Chemical Processing Infrastructure" loading="lazy">
+                        <div class="category-badge">Equipment</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Advanced Piping Systems</h3>
+                                <p>Complex piping and connection systems for chemical processing applications, demonstrating FTG's expertise in fluid handling and process infrastructure.</p>
+                                <button class="view-btn">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Advanced Piping Systems</h3>
+                        <div class="gallery-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">🔧</div>
+                                <span>Process Piping</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">⚙️</div>
+                                <span>Custom Connections</span>
+                            </div>
+                        </div>
+                        <p class="gallery-description">
+                            Sophisticated piping systems with custom connections and fittings designed for optimal fluid flow and chemical compatibility.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 10 - Vessel Components -->
+                <div class="gallery-item fade-in" data-category="fabrication materials">
+                    <div class="gallery-image">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3M=" alt="FTG Vessel Components - Precision Manufacturing" loading="lazy">
+                        <div class="category-badge">Fabrication</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Precision Vessel Components</h3>
+                                <p>Custom-manufactured vessel components and fittings showing FTG's attention to detail and precision in reactive metal fabrication for industrial applications.</p>
+                                <button class="view-btn">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Precision Vessel Components</h3>
+                        <div class="gallery-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">🔩</div>
+                                <span>Custom Components</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">📐</div>
+                                <span>Precision Engineering</span>
+                            </div>
+                        </div>
+                        <p class="gallery-description">
+                            Precisely engineered vessel components manufactured to exact specifications for critical chemical processing applications.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 11 - Large Tank Head -->
+                <div class="gallery-item fade-in" data-category="fabrication equipment">
+                    <div class="gallery-image">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3M=" alt="FTG Large Tank Head - Industrial Fabrication" loading="lazy">
+                        <div class="category-badge">Fabrication</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Large Scale Tank Head</h3>
+                                <p>Massive tank head fabrication showing FTG's capability to handle large-scale industrial projects with precision and quality craftsmanship.</p>
+                                <button class="view-btn">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Large Scale Tank Head</h3>
+                        <div class="gallery-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">⚙️</div>
+                                <span>Large Scale</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">🏭</div>
+                                <span>Industrial Grade</span>
+                            </div>
+                        </div>
+                        <p class="gallery-description">
+                            Large-scale tank head fabrication demonstrating our capacity for major industrial components and complex vessel assemblies.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 12 - Wrapped Vessels -->
+                <div class="gallery-item fade-in" data-category="equipment facility">
+                    <div class="gallery-image">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3M=" alt="FTG Wrapped Vessels - Protective Systems" loading="lazy">
+                        <div class="category-badge">Equipment</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Protected Storage Vessels</h3>
+                                <p>Large vessels with protective wrapping ready for shipment, showing FTG's commitment to quality protection and professional delivery standards.</p>
+                                <button class="view-btn">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Protected Storage Vessels</h3>
+                        <div class="gallery-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">📦</div>
+                                <span>Protected Shipping</span>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">🚛</div>
+                                <span>Quality Delivery</span>
+                            </div>
+                        </div>
+                        <p class="gallery-description">
+                            Professional packaging and protection systems ensuring safe delivery of completed equipment to client facilities worldwide.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <div class="lightbox-content">
+            <img class="lightbox-image" id="lightboxImage" src="" alt="">
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: #2C2C2C; color: white; padding: 3rem 0 1rem; text-align: center; border-top: 3px solid #D4AF37;">
+        <div class="container">
+            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div class="footer-section">
+                    <h4 style="color: #D4AF37; margin-bottom: 1rem;">Fiberglass Technical Group</h4>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">Leading specialists in reactive metal fabrication design, consultation, and inspection services for the chemical processing industry.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 style="color: #D4AF37; margin-bottom: 1rem;">Gallery Categories</h4>
+                    <p style="color: rgba(255,255,255,0.8);">Fabrication Projects</p>
+                    <p style="color: rgba(255,255,255,0.8);">Inspection Services</p>
+                    <p style="color: rgba(255,255,255,0.8);">Equipment Photos</p>
+                    <p style="color: rgba(255,255,255,0.8);">Facility Images</p>
+                </div>
+                <div class="footer-section">
+                    <h4 style="color: #D4AF37; margin-bottom: 1rem;">Materials</h4>
+                    <p style="color: rgba(255,255,255,0.8);">Titanium Systems</p>
+                    <p style="color: rgba(255,255,255,0.8);">Zirconium Applications</p>
+                    <p style="color: rgba(255,255,255,0.8);">Tantalum Solutions</p>
+                    <p style="color: rgba(255,255,255,0.8);">Specialty Alloys</p>
+                </div>
+                <div class="footer-section">
+                    <h4 style="color: #D4AF37; margin-bottom: 1rem;">Contact</h4>
+                    <p style="color: rgba(255,255,255,0.8);">Email: info@fiberglasstechnicalgroup.com</p>
+                    <p style="color: rgba(255,255,255,0.8);">Worldwide Service Available</p>
+                    <p style="color: rgba(255,255,255,0.8);">24/7 Emergency Support</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="border-top: 1px solid rgba(212,175,55,0.3); padding-top: 1rem; color: rgba(255,255,255,0.6); font-size: 0.9rem;">
+                <p>&copy; 2025 Fiberglass Technical Group. All rights reserved. | Expert Reactive Metal Fabrication Services</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+            this.textContent = this.textContent === '☰' ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+                document.querySelector('.mobile-menu-toggle').textContent = '☰';
+            });
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all') {
+                        item.classList.remove('hidden');
+                    } else {
+                        const categories = item.getAttribute('data-category').split(' ');
+                        if (categories.includes(filter)) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality
+        function openLightbox(imageSrc, title, description) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxTitle = document.getElementById('lightboxTitle');
+            const lightboxDescription = document.getElementById('lightboxDescription');
+
+            lightboxImage.src = imageSrc;
+            lightboxTitle.textContent = title;
+            lightboxDescription.textContent = description;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Add click events to gallery items
+        galleryItems.forEach(item => {
+            const viewBtn = item.querySelector('.view-btn');
+            const image = item.querySelector('img');
+            const title = item.querySelector('.gallery-info h3').textContent;
+            const description = item.querySelector('.gallery-description').textContent;
+
+            const openLightboxHandler = () => {
+                openLightbox(image.src, title, description);
+            };
+
+            item.addEventListener('click', openLightboxHandler);
+            if (viewBtn) {
+                viewBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    openLightboxHandler();
+                });
+            }
+        });
+
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 44, 44, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.background = 'rgba(44, 44, 44, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        console.log('🖼️ FTG Gallery Loaded Successfully');
+        console.log('📸 Interactive Image Gallery with Lightbox');
+    </script>
+</body>
+</html>
